@@ -1,0 +1,3 @@
+- test files should be named test_<something>.py or <someting>_test.py
+- test methods and functions should be naemd test_<something>.
+- test classes should be named Test<Something>.

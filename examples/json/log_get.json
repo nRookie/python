@@ -1,0 +1,5093 @@
+[
+    {
+        "layer": "S1AP", 
+        "dir": "- ", 
+        "level": 4, 
+        "data": [
+            "Connecting to 127.0.1.100:36412"
+        ], 
+        "timestamp": 58918291, 
+        "src": "ENB", 
+        "idx": 0
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Connected to 127.0.1.100:36412"
+        ], 
+        "timestamp": 58919799, 
+        "src": "ENB", 
+        "idx": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 S1 setup request", 
+            "initiatingMessage: {", 
+            "  procedureCode id-S1Setup,", 
+            "  criticality reject,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-Global-ENB-ID,", 
+            "        criticality reject,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          eNB-ID macroENB-ID: '1A2D1'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-eNBname,", 
+            "        criticality ignore,", 
+            "        value \"enb1a2d1\"", 
+            "      },", 
+            "      {", 
+            "        id id-SupportedTAs,", 
+            "        criticality reject,", 
+            "        value {", 
+            "          {", 
+            "            tAC '0001'H,", 
+            "            broadcastPLMNs {", 
+            "              '00F110'H", 
+            "            },", 
+            "            iE-Extensions {", 
+            "              {", 
+            "                id id-RAT-Type,", 
+            "                criticality reject,", 
+            "                extensionValue nbiot", 
+            "              }", 
+            "            }", 
+            "          },", 
+            "          {", 
+            "            tAC '0002'H,", 
+            "            broadcastPLMNs {", 
+            "              '00F120'H,", 
+            "              '00F110'H", 
+            "            },", 
+            "            iE-Extensions {", 
+            "              {", 
+            "                id id-RAT-Type,", 
+            "                criticality reject,", 
+            "                extensionValue nbiot", 
+            "              }", 
+            "            }", 
+            "          }", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-DefaultPagingDRX,", 
+            "        criticality ignore,", 
+            "        value v32", 
+            "      },", 
+            "      {", 
+            "        id id-NB-IoT-DefaultPagingDRX,", 
+            "        criticality ignore,", 
+            "        value v128", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58919799, 
+        "src": "ENB", 
+        "idx": 2
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 S1 setup response", 
+            "successfulOutcome: {", 
+            "  procedureCode id-S1Setup,", 
+            "  criticality reject,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-ServedGUMMEIs,", 
+            "        criticality reject,", 
+            "        value {", 
+            "          {", 
+            "            servedPLMNs {", 
+            "              '00F110'H", 
+            "            },", 
+            "            servedGroupIDs {", 
+            "              '8001'H", 
+            "            },", 
+            "            servedMMECs {", 
+            "              '01'H", 
+            "            }", 
+            "          }", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-RelativeMMECapacity,", 
+            "        criticality ignore,", 
+            "        value 50", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58919800, 
+        "src": "ENB", 
+        "idx": 3
+    }, 
+    {
+        "frame": 683, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=7 ta=4 snr=55.7 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58926627, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 4, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58926627, 
+        "src": "ENB", 
+        "idx": 5, 
+        "ue_id": 1
+    }, 
+    {
+        "frame": 683, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=7 ta=4 snr=55.7 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58926627, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 6, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58926627, 
+        "src": "ENB", 
+        "idx": 7, 
+        "ue_id": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=19"
+        ], 
+        "timestamp": 58926634, 
+        "src": "ENB", 
+        "idx": 8
+    }, 
+    {
+        "rnti": 171, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 684, 
+        "timestamp": 58926634, 
+        "idx": 9, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=19"
+        ], 
+        "timestamp": 58926634, 
+        "src": "ENB", 
+        "idx": 10
+    }, 
+    {
+        "rnti": 171, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 684, 
+        "timestamp": 58926634, 
+        "idx": 11, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 171, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 7, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 687, 
+        "timestamp": 58926663, 
+        "idx": 12, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 171, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 687, 
+        "timestamp": 58926664, 
+        "idx": 13, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=OK snr=23.9 epre=-67.9"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 689, 
+        "timestamp": 58926688, 
+        "channel": "NPUSCH", 
+        "idx": 14, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "LCID:0 len=10 DPR: PH=3 DV=7 "
+        ], 
+        "timestamp": 58926688, 
+        "src": "ENB", 
+        "idx": 15, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "CCCH-NB: RRC Connection Request", 
+            "{", 
+            "  message c1: rrcConnectionRequest-r13: {", 
+            "    criticalExtensions rrcConnectionRequest-r13: {", 
+            "      ue-Identity-r13 randomValue: '67CDA4754E'H,", 
+            "      establishmentCause-r13 mo-Signalling,", 
+            "      multiToneSupport-r13 true,", 
+            "      multiCarrierSupport-r13 true,", 
+            "      earlyContentionResolution-r14 FALSE,", 
+            "      cqi-NPDCCH-r14 noMeasurements,", 
+            "      spare '00000000000000000'B", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926688, 
+        "src": "ENB", 
+        "idx": 16, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "CCCH-NB: RRC Connection Setup", 
+            "{", 
+            "  message c1: rrcConnectionSetup-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: rrcConnectionSetup-r13: {", 
+            "      radioResourceConfigDedicated-r13 {", 
+            "        srb-ToAddModList-r13 {", 
+            "          {", 
+            "            rlc-Config-r13 explicitValue: am: {", 
+            "              ul-AM-RLC-r13 {", 
+            "                t-PollRetransmit-r13 ms6000,", 
+            "                maxRetxThreshold-r13 t32", 
+            "              },", 
+            "              dl-AM-RLC-r13 {", 
+            "              }", 
+            "            },", 
+            "            logicalChannelConfig-r13 explicitValue: {", 
+            "              priority-r13 1", 
+            "            }", 
+            "          }", 
+            "        },", 
+            "        mac-MainConfig-r13 explicitValue-r13: {", 
+            "          ul-SCH-Config-r13 {", 
+            "            periodicBSR-Timer-r13 pp16,", 
+            "            retxBSR-Timer-r13 pp64", 
+            "          },", 
+            "          timeAlignmentTimerDedicated-r13 infinity", 
+            "        },", 
+            "        physicalConfigDedicated-r13 {", 
+            "          npdcch-ConfigDedicated-r13 {", 
+            "            npdcch-NumRepetitions-r13 r8,", 
+            "            npdcch-StartSF-USS-r13 v4,", 
+            "            npdcch-Offset-USS-r13 zero", 
+            "          }", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926688, 
+        "src": "ENB", 
+        "idx": 17, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-68.4"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 689, 
+        "timestamp": 58926689, 
+        "channel": "NPUSCH", 
+        "idx": 18, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "PAD: len=0 UECRI: 2e cf 9b 48 ea 9c LCID:0 len=9 "
+        ], 
+        "timestamp": 58926698, 
+        "src": "ENB", 
+        "idx": 19, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 691, 
+        "timestamp": 58926698, 
+        "channel": "NPDCCH", 
+        "idx": 20, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 691, 
+        "timestamp": 58926698, 
+        "channel": "NPDCCH", 
+        "idx": 21, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 7, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=2 n_rep=1 tb_len=18 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 693, 
+        "timestamp": 58926723, 
+        "channel": "NPDSCH", 
+        "idx": 22, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-6.1 epre=-123.2"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 694, 
+        "timestamp": 58926738, 
+        "channel": "NPUSCH", 
+        "idx": 23, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 695, 
+        "timestamp": 58926756, 
+        "channel": "NPUSCH", 
+        "idx": 24, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 697, 
+        "timestamp": 58926762, 
+        "channel": "NPDCCH", 
+        "idx": 25, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 697, 
+        "timestamp": 58926762, 
+        "channel": "NPDCCH", 
+        "idx": 26, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=10 n_sc=12 n_sc_start=0 n_rep=1 tb_len=85 mod=2 rv_idx=0 crc=OK snr=17.5 epre=-70.7 ta=1.3"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 698, 
+        "timestamp": 58926790, 
+        "channel": "NPUSCH", 
+        "idx": 27, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=58 PAD: len=22 "
+        ], 
+        "timestamp": 58926790, 
+        "src": "ENB", 
+        "idx": 28, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=0"
+        ], 
+        "timestamp": 58926790, 
+        "src": "ENB", 
+        "idx": 29, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: RRC Connection Setup Complete", 
+            "{", 
+            "  message c1: rrcConnectionSetupComplete-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions rrcConnectionSetupComplete-r13: {", 
+            "      selectedPLMN-Identity-r13 1,", 
+            "      registeredMME-r13 {", 
+            "        mmegi '8001'H,", 
+            "        mmec '01'H", 
+            "      },", 
+            "      dedicatedInfoNAS-r13 '0741710BF600F1108001010CE2DF1A07F070008000A40000060201D011D1C05200F1100001F5E0C16A01225E01236E0135'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926790, 
+        "src": "ENB", 
+        "idx": 30, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "EMM: Attach request", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x41 (Attach request)", 
+            "EPS attach type = 1 (EPS attach)", 
+            "NAS key set identifier:", 
+            "  TSC = 0", 
+            "  NAS key set identifier = 7", 
+            "Old GUTI or IMSI:", 
+            "  MCC = 001", 
+            "  MNC = 01 ", 
+            "  MME Group ID = 32769", 
+            "  MME Code = 1", 
+            "  M-TMSI = 0x0ce2df1a", 
+            "UE network capability:", 
+            "  0xf0 (EEA0=1, 128-EEA1=1, 128-EEA2=1, 128-EEA3=1, EEA4=0, EEA5=0, EEA6=0, EEA7=0)", 
+            "  0x70 (EIA0=0, 128-EIA1=1, 128-EIA2=1, 128-EIA3=1, EIA4=0, EIA5=0, EIA6=0, EIA7=0)", 
+            "  0x00 (UEA0=0, UEA1=0, UEA2=0, UEA3=0, UEA4=0, UEA5=0, UEA6=0, UEA7=0)", 
+            "  0x80 (UCS2=1, UIA1=0, UIA2=0, UIA3=0, UIA4=0, UIA5=0, UIA6=0, UIA7=0)", 
+            "  0x00 (ProSe-dd=0, ProSe=0, H.245-ASH=0, ACC-CSFB=0, LPP=0, LCS=0, 1xSRVCC=0, NF=0)", 
+            "  0xa4 (ePCO=1, HC-CP CIoT=0, ERw/oPDN=1, S1-U data=0, UP CIoT=0, CP CIoT=1, ProSe-relay=0, ProSe-dc=0)", 
+            "  0x00 (15 bearers=0, SGC=0, N1mode=0, DCNR=0, CP backoff=0, RestrictEC=0, V2X PC5=0, multipleDRB=0)", 
+            "ESM message container:", 
+            "  Protocol discriminator = 0x2 (EPS Session Management)", 
+            "  EPS bearer identity = 0", 
+            "  Procedure transaction identity = 1", 
+            "  Message type = 0xd0 (PDN connectivity request)", 
+            "  Request type = 1 (initial request)", 
+            "  PDN type = 1 (IPv4)", 
+            "  ESM information transfer flag = 1", 
+            "  Device properties = 0x00 (not configured for NAS signalling low priority)", 
+            "Last visited registered TAI:", 
+            "  MCC = 001", 
+            "  MNC = 01 ", 
+            "  TAC = 0x0001", 
+            "Additional update type = 0x05 (control plane CIoT EPS optimization, keeping NAS signalling connection not required, SMS only)", 
+            "Old GUTI type = 0", 
+            "MS network feature support = 0x01 (MS supports the extended periodic timer in this domain)", 
+            "T3324 value:", 
+            "  Value = 2", 
+            "  Unit = 1 (1 minute)", 
+            "T3412 extended value:", 
+            "  Value = 3", 
+            "  Unit = 1 (1 hour)", 
+            "Extended DRX parameters:", 
+            "  Paging Time Window = 3 (WB-S1:5.12 seconds; NB-S1:10.24 seconds)", 
+            "  eDRX cycle = 5 (81.92 seconds)"
+        ], 
+        "timestamp": 58926790, 
+        "src": "ENB", 
+        "idx": 31, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Initial UE message", 
+            "initiatingMessage: {", 
+            "  procedureCode id-initialUEMessage,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '0741710BF600F1108001010CE2DF1A07F070008000A40000060201D011D1C05200F1100001F5E0C16A01225E01236E0135'H", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality reject,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-RRC-Establishment-Cause,", 
+            "        criticality ignore,", 
+            "        value mo-Signalling", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926790, 
+        "src": "ENB", 
+        "idx": 32
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '075501'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926791, 
+        "src": "ENB", 
+        "idx": 33
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "EMM: Identity request", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x55 (Identity request)", 
+            "Identity request message identity = 1 (IMSI)"
+        ], 
+        "timestamp": 58926791, 
+        "src": "ENB", 
+        "idx": 34, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '075501'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926791, 
+        "src": "ENB", 
+        "idx": 35, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=1"
+        ], 
+        "timestamp": 58926794, 
+        "src": "ENB", 
+        "idx": 36, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=0"
+        ], 
+        "timestamp": 58926794, 
+        "src": "ENB", 
+        "idx": 37, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=8 PAD: len=3 "
+        ], 
+        "timestamp": 58926794, 
+        "src": "ENB", 
+        "idx": 38, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 8, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 700, 
+        "timestamp": 58926794, 
+        "channel": "NPDCCH", 
+        "idx": 39, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=2 n_rep=1 tb_len=18 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 701, 
+        "timestamp": 58926799, 
+        "channel": "NPDSCH", 
+        "idx": 40, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-0.8 epre=-118.8"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 700, 
+        "timestamp": 58926802, 
+        "channel": "NPUSCH", 
+        "idx": 41, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 704, 
+        "timestamp": 58926827, 
+        "channel": "NPDCCH", 
+        "idx": 42, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 7, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 702, 
+        "timestamp": 58926832, 
+        "channel": "NPUSCH", 
+        "idx": 43, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 704, 
+        "timestamp": 58926832, 
+        "channel": "NPDCCH", 
+        "idx": 44, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=18.4 epre=-70.5 ta=1.6"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 705, 
+        "timestamp": 58926845, 
+        "channel": "NPUSCH", 
+        "idx": 45, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "PAD: len=0 PAD: len=0 SBSR: lcg=0 b=4 LCID:3 len=2 "
+        ], 
+        "timestamp": 58926845, 
+        "src": "ENB", 
+        "idx": 46, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=1"
+        ], 
+        "timestamp": 58926845, 
+        "src": "ENB", 
+        "idx": 47, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 707, 
+        "timestamp": 58926858, 
+        "channel": "NPDCCH", 
+        "idx": 48, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-382.3 epre=-117.9"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 707, 
+        "timestamp": 58926867, 
+        "channel": "NPUSCH", 
+        "idx": 49, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=3 n_sc=12 n_sc_start=0 n_rep=1 tb_len=26 mod=2 rv_idx=0 crc=OK snr=16.6 epre=-71.6 ta=1.5"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 708, 
+        "timestamp": 58926873, 
+        "channel": "NPUSCH", 
+        "idx": 50, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=15 PAD: len=6 "
+        ], 
+        "timestamp": 58926873, 
+        "src": "ENB", 
+        "idx": 51, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=1"
+        ], 
+        "timestamp": 58926873, 
+        "src": "ENB", 
+        "idx": 52, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UL Information Transfer", 
+            "{", 
+            "  message c1: ulInformationTransfer-r13: {", 
+            "    criticalExtensions ulInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '0756080910104401000020'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926873, 
+        "src": "ENB", 
+        "idx": 53, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "EMM: Identity response", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x56 (Identity response)", 
+            "Mobile identity:", 
+            "  IMSI = 001014410000002"
+        ], 
+        "timestamp": 58926873, 
+        "src": "ENB", 
+        "idx": 54, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Uplink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-uplinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '0756080910104401000020'H", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926873, 
+        "src": "ENB", 
+        "idx": 55
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '075200309392EDB90C56DF3D8F0BDA1A6BB78610EEBD0950D8149001309290EEBD28C0D9'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926874, 
+        "src": "ENB", 
+        "idx": 56
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "EMM: Authentication request", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x52 (Authentication request)", 
+            "NAS key set identifier:", 
+            "  TSC = 0", 
+            "  NAS key set identifier = 0", 
+            "Authentication parameter RAND:", 
+            "  Data = 30 93 92 ed b9 0c 56 df 3d 8f 0b da 1a 6b b7 86", 
+            "Authentication parameter AUTN:", 
+            "  Length = 16", 
+            "  Data = ee bd 09 50 d8 14 90 01 30 92 90 ee bd 28 c0 d9"
+        ], 
+        "timestamp": 58926874, 
+        "src": "ENB", 
+        "idx": 57, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '075200309392EDB90C56DF3D8F0BDA1A6BB78610EEBD0950D8149001309290EEBD28C0D9'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58926874, 
+        "src": "ENB", 
+        "idx": 58, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 4, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 710, 
+        "timestamp": 58926890, 
+        "channel": "NPDCCH", 
+        "idx": 59, 
+        "cell": 2
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=2"
+        ], 
+        "timestamp": 58926892, 
+        "src": "ENB", 
+        "idx": 60, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=1"
+        ], 
+        "timestamp": 58926892, 
+        "src": "ENB", 
+        "idx": 61, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=41 PAD: len=5 "
+        ], 
+        "timestamp": 58926892, 
+        "src": "ENB", 
+        "idx": 62, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 710, 
+        "timestamp": 58926892, 
+        "channel": "NPDCCH", 
+        "idx": 63, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=5 n_rep=1 tb_len=53 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 711, 
+        "timestamp": 58926897, 
+        "channel": "NPDSCH", 
+        "idx": 64, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 258, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-15.4 epre=-66.2"
+        ], 
+        "ue_id": 2, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 713, 
+        "timestamp": 58926930, 
+        "channel": "NPUSCH", 
+        "idx": 65, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58926930, 
+        "src": "ENB", 
+        "idx": 66, 
+        "ue_id": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 9, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 712, 
+        "timestamp": 58926934, 
+        "channel": "NPUSCH", 
+        "idx": 67, 
+        "cell": 1
+    }, 
+    {
+        "frame": 715, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=11 ta=4 snr=52.1 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58926947, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 68, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58926947, 
+        "src": "ENB", 
+        "idx": 69, 
+        "ue_id": 3
+    }, 
+    {
+        "frame": 715, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=11 ta=4 snr=52.1 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58926947, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 70, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58926947, 
+        "src": "ENB", 
+        "idx": 71, 
+        "ue_id": 4
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=23"
+        ], 
+        "timestamp": 58926954, 
+        "src": "ENB", 
+        "idx": 72
+    }, 
+    {
+        "rnti": 179, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 716, 
+        "timestamp": 58926954, 
+        "idx": 73, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=23"
+        ], 
+        "timestamp": 58926954, 
+        "src": "ENB", 
+        "idx": 74
+    }, 
+    {
+        "rnti": 179, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 716, 
+        "timestamp": 58926954, 
+        "idx": 75, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 179, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 3, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 719, 
+        "timestamp": 58926979, 
+        "idx": 76, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 179, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 719, 
+        "timestamp": 58926982, 
+        "idx": 77, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 720, 
+        "timestamp": 58926987, 
+        "channel": "NPDCCH", 
+        "idx": 78, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 7, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-10.4 epre=-81.2"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 720, 
+        "timestamp": 58927004, 
+        "channel": "NPUSCH", 
+        "idx": 79, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 259, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=OK snr=25.6 epre=-68.3"
+        ], 
+        "ue_id": 3, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 721, 
+        "timestamp": 58927007, 
+        "channel": "NPUSCH", 
+        "idx": 80, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 4, 
+        "data": [
+            "mac_crnti=0x0101: resuming connection of ue_id=0x0001"
+        ], 
+        "timestamp": 58927007, 
+        "src": "ENB", 
+        "idx": 81, 
+        "ue_id": 3
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "CRNTI=0x0101 SBSR: lcg=0 b=0 LCID:3 len=2 PAD: len=1 "
+        ], 
+        "timestamp": 58927007, 
+        "src": "ENB", 
+        "idx": 82, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=2"
+        ], 
+        "timestamp": 58927007, 
+        "src": "ENB", 
+        "idx": 83, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927007, 
+        "src": "ENB", 
+        "idx": 84, 
+        "ue_id": 3
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 8, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=0 mod=2 rv_idx=0 crc=KO snr=-9.8 epre=-124.5 ta=-2.6"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 721, 
+        "timestamp": 58927008, 
+        "channel": "NPUSCH", 
+        "idx": 85, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 723, 
+        "timestamp": 58927018, 
+        "channel": "NPDCCH", 
+        "idx": 86, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 723, 
+        "timestamp": 58927018, 
+        "channel": "NPDCCH", 
+        "idx": 87, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=18.2 epre=-71.2 ta=1.0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 726, 
+        "timestamp": 58927051, 
+        "channel": "NPUSCH", 
+        "idx": 88, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 PAD: len=4 "
+        ], 
+        "timestamp": 58927051, 
+        "src": "ENB", 
+        "idx": 89, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-5.6 epre=-88.6"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 726, 
+        "timestamp": 58927058, 
+        "channel": "NPUSCH", 
+        "idx": 90, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 729, 
+        "timestamp": 58927082, 
+        "channel": "NPDCCH", 
+        "idx": 91, 
+        "cell": 2
+    }, 
+    {
+        "frame": 731, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=8 ta=4 snr=57.0 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927107, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 92, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927107, 
+        "src": "ENB", 
+        "idx": 93, 
+        "ue_id": 5
+    }, 
+    {
+        "frame": 731, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=8 ta=4 snr=57.0 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927107, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 94, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927107, 
+        "src": "ENB", 
+        "idx": 95, 
+        "ue_id": 6
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-6.7 epre=-125.7"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 732, 
+        "timestamp": 58927122, 
+        "channel": "NPUSCH", 
+        "idx": 96, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=20"
+        ], 
+        "timestamp": 58927147, 
+        "src": "ENB", 
+        "idx": 97
+    }, 
+    {
+        "rnti": 183, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 736, 
+        "timestamp": 58927147, 
+        "idx": 98, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=20"
+        ], 
+        "timestamp": 58927147, 
+        "src": "ENB", 
+        "idx": 99
+    }, 
+    {
+        "rnti": 183, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 736, 
+        "timestamp": 58927147, 
+        "idx": 100, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 183, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 738, 
+        "timestamp": 58927172, 
+        "idx": 101, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 183, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 7, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 738, 
+        "timestamp": 58927173, 
+        "idx": 102, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 261, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=OK snr=34.4 epre=-68.2"
+        ], 
+        "ue_id": 5, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 740, 
+        "timestamp": 58927197, 
+        "channel": "NPUSCH", 
+        "idx": 103, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 4, 
+        "data": [
+            "mac_crnti=0x0101: resuming connection of ue_id=0x0001"
+        ], 
+        "timestamp": 58927197, 
+        "src": "ENB", 
+        "idx": 104, 
+        "ue_id": 5
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "CRNTI=0x0101 SBSR: lcg=0 b=3 LCID:3 len=5 "
+        ], 
+        "timestamp": 58927197, 
+        "src": "ENB", 
+        "idx": 105, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=0 FI=01 E=0 SN=2"
+        ], 
+        "timestamp": 58927197, 
+        "src": "ENB", 
+        "idx": 106, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927197, 
+        "src": "ENB", 
+        "idx": 107, 
+        "ue_id": 5
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-68.8"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 740, 
+        "timestamp": 58927198, 
+        "channel": "NPUSCH", 
+        "idx": 108, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 4, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 742, 
+        "timestamp": 58927210, 
+        "channel": "NPDCCH", 
+        "idx": 109, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 742, 
+        "timestamp": 58927212, 
+        "channel": "NPDCCH", 
+        "idx": 110, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=2 n_sc=12 n_sc_start=0 n_rep=1 tb_len=15 mod=2 rv_idx=0 crc=OK snr=17.5 epre=-71.3 ta=1.2"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 745, 
+        "timestamp": 58927244, 
+        "channel": "NPUSCH", 
+        "idx": 111, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=12 "
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 112, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=10 E=0 SN=3"
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 113, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UL Information Transfer", 
+            "{", 
+            "  message c1: ulInformationTransfer-r13: {", 
+            "    criticalExtensions ulInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '075308309290EEBD0950D8'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 114, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "EMM: Authentication response", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x53 (Authentication response)", 
+            "Authentication response parameter:", 
+            "  Length = 8", 
+            "  Data = 30 92 90 ee bd 09 50 d8"
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 115, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Uplink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-uplinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '075308309290EEBD0950D8'H", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 116
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=4"
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 117, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 PAD: len=4 "
+        ], 
+        "timestamp": 58927244, 
+        "src": "ENB", 
+        "idx": 118, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 8, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 745, 
+        "timestamp": 58927244, 
+        "channel": "NPDCCH", 
+        "idx": 119, 
+        "cell": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '37046E913A00075D020004F0700080C14F0816056139A05189B2'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927245, 
+        "src": "ENB", 
+        "idx": 120
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "EMM: Security mode command", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x3 (Integrity protected with new EPS security context)", 
+            "Auth code = 0x046e913a", 
+            "Sequence number = 0x00", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x5d (Security mode command)", 
+            "Selected NAS security algorithms = 0x02 (EEA0, EIA2)", 
+            "NAS key set identifier:", 
+            "  TSC = 0", 
+            "  NAS key set identifier = 0", 
+            "Replayed UE security capabilities:", 
+            "  0xf0 (EEA0=1, 128-EEA1=1, 128-EEA2=1, 128-EEA3=1, EEA4=0, EEA5=0, EEA6=0, EEA7=0)", 
+            "  0x70 (EIA0=0, 128-EIA1=1, 128-EIA2=1, 128-EIA3=1, EIA4=0, EIA5=0, EIA6=0, EIA7=0)", 
+            "  0x00 (UEA0=0, UEA1=0, UEA2=0, UEA3=0, UEA4=0, UEA5=0, UEA6=0, UEA7=0)", 
+            "  0x80 (Spare=1, UIA1=0, UIA2=0, UIA3=0, UIA4=0, UIA5=0, UIA6=0, UIA7=0)", 
+            "IMEISV request = 1", 
+            "Hash MME:", 
+            "  Length = 8", 
+            "  Data = 16 05 61 39 a0 51 89 b2"
+        ], 
+        "timestamp": 58927245, 
+        "src": "ENB", 
+        "idx": 121, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '37046E913A00075D020004F0700080C14F0816056139A05189B2'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927245, 
+        "src": "ENB", 
+        "idx": 122, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=1 n_rep=1 tb_len=9 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 746, 
+        "timestamp": 58927249, 
+        "channel": "NPDSCH", 
+        "idx": 123, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 6, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-5.9 epre=-122.1"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 745, 
+        "timestamp": 58927253, 
+        "channel": "NPUSCH", 
+        "idx": 124, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 8, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 748, 
+        "timestamp": 58927274, 
+        "channel": "NPDCCH", 
+        "idx": 125, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 747, 
+        "timestamp": 58927281, 
+        "channel": "NPUSCH", 
+        "idx": 126, 
+        "cell": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=2"
+        ], 
+        "timestamp": 58927282, 
+        "src": "ENB", 
+        "idx": 127, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=31 PAD: len=7 "
+        ], 
+        "timestamp": 58927282, 
+        "src": "ENB", 
+        "idx": 128, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 749, 
+        "timestamp": 58927282, 
+        "channel": "NPDCCH", 
+        "idx": 129, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=4 n_rep=1 tb_len=41 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 750, 
+        "timestamp": 58927287, 
+        "channel": "NPDSCH", 
+        "idx": 130, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 260, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-50.9"
+        ], 
+        "ue_id": 4, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 752, 
+        "timestamp": 58927317, 
+        "channel": "NPUSCH", 
+        "idx": 131, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927317, 
+        "src": "ENB", 
+        "idx": 132, 
+        "ue_id": 4
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 7, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 751, 
+        "timestamp": 58927322, 
+        "channel": "NPUSCH", 
+        "idx": 133, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 755, 
+        "timestamp": 58927338, 
+        "channel": "NPDCCH", 
+        "idx": 134, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 755, 
+        "timestamp": 58927338, 
+        "channel": "NPDCCH", 
+        "idx": 135, 
+        "cell": 2
+    }, 
+    {
+        "frame": 755, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=11 ta=3 snr=58.2 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927347, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 136, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927347, 
+        "src": "ENB", 
+        "idx": 137, 
+        "ue_id": 7
+    }, 
+    {
+        "frame": 755, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=11 ta=3 snr=58.2 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927347, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 138, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927347, 
+        "src": "ENB", 
+        "idx": 139, 
+        "ue_id": 8
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=KO snr=-3.6 epre=-115.4 ta=-5.3"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 756, 
+        "timestamp": 58927351, 
+        "channel": "NPUSCH", 
+        "idx": 140, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 4, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 758, 
+        "timestamp": 58927370, 
+        "channel": "NPDCCH", 
+        "idx": 141, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-17.4 epre=-131.8"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 758, 
+        "timestamp": 58927378, 
+        "channel": "NPUSCH", 
+        "idx": 142, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=1 crc=KO snr=-12.6 epre=-126.7 ta=1.5"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 759, 
+        "timestamp": 58927383, 
+        "channel": "NPUSCH", 
+        "idx": 143, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=23"
+        ], 
+        "timestamp": 58927402, 
+        "src": "ENB", 
+        "idx": 144
+    }, 
+    {
+        "rnti": 189, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 761, 
+        "timestamp": 58927402, 
+        "idx": 145, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=23"
+        ], 
+        "timestamp": 58927402, 
+        "src": "ENB", 
+        "idx": 146
+    }, 
+    {
+        "rnti": 189, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 761, 
+        "timestamp": 58927402, 
+        "idx": 147, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 189, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 764, 
+        "timestamp": 58927427, 
+        "idx": 148, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 189, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 764, 
+        "timestamp": 58927427, 
+        "idx": 149, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 8, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 764, 
+        "timestamp": 58927434, 
+        "channel": "NPDCCH", 
+        "idx": 150, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 263, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=OK snr=30.6 epre=-67.6"
+        ], 
+        "ue_id": 7, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 765, 
+        "timestamp": 58927452, 
+        "channel": "NPUSCH", 
+        "idx": 151, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 4, 
+        "data": [
+            "mac_crnti=0x0101: resuming connection of ue_id=0x0001"
+        ], 
+        "timestamp": 58927452, 
+        "src": "ENB", 
+        "idx": 152, 
+        "ue_id": 7
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "CRNTI=0x0101 SBSR: lcg=0 b=7 LCID:3 len=2 PAD: len=1 "
+        ], 
+        "timestamp": 58927452, 
+        "src": "ENB", 
+        "idx": 153, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=3"
+        ], 
+        "timestamp": 58927452, 
+        "src": "ENB", 
+        "idx": 154, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927452, 
+        "src": "ENB", 
+        "idx": 155, 
+        "ue_id": 7
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-67.6"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 765, 
+        "timestamp": 58927452, 
+        "channel": "NPUSCH", 
+        "idx": 156, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 769, 
+        "timestamp": 58927478, 
+        "channel": "NPDCCH", 
+        "idx": 157, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 769, 
+        "timestamp": 58927479, 
+        "channel": "NPDCCH", 
+        "idx": 158, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=3 n_sc=12 n_sc_start=0 n_rep=1 tb_len=26 mod=2 rv_idx=0 crc=OK snr=18.0 epre=-70.6 ta=0.7"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 774, 
+        "timestamp": 58927538, 
+        "channel": "NPUSCH", 
+        "idx": 159, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=23 "
+        ], 
+        "timestamp": 58927538, 
+        "src": "ENB", 
+        "idx": 160, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=4"
+        ], 
+        "timestamp": 58927538, 
+        "src": "ENB", 
+        "idx": 161, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UL Information Transfer", 
+            "{", 
+            "  message c1: ulInformationTransfer-r13: {", 
+            "    criticalExtensions ulInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '474F51E36F00075E23090340040306103409F0'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927538, 
+        "src": "ENB", 
+        "idx": 162, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "EMM: Security mode complete", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x4 (Integrity protected and ciphered with new EPS security context)", 
+            "Auth code = 0x4f51e36f", 
+            "Sequence number = 0x00", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x5e (Security mode complete)", 
+            "IMEISV:", 
+            "  IMEISV = 0044030600143900"
+        ], 
+        "timestamp": 58927538, 
+        "src": "ENB", 
+        "idx": 163, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Uplink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-uplinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '474F51E36F00075E23090340040306103409F0'H", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927538, 
+        "src": "ENB", 
+        "idx": 164
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 775, 
+        "timestamp": 58927538, 
+        "channel": "NPDCCH", 
+        "idx": 165, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-77.0"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 774, 
+        "timestamp": 58927539, 
+        "channel": "NPUSCH", 
+        "idx": 166, 
+        "cell": 2
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '27A7BC147A010201D9'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927539, 
+        "src": "ENB", 
+        "idx": 167
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "ESM: ESM information request", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x2 (Integrity protected and ciphered)", 
+            "Auth code = 0xa7bc147a", 
+            "Sequence number = 0x01", 
+            "Protocol discriminator = 0x2 (EPS Session Management)", 
+            "EPS bearer identity = 0", 
+            "Procedure transaction identity = 1", 
+            "Message type = 0xd9 (ESM information request)"
+        ], 
+        "timestamp": 58927539, 
+        "src": "ENB", 
+        "idx": 168, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '27A7BC147A010201D9'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927539, 
+        "src": "ENB", 
+        "idx": 169, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=5"
+        ], 
+        "timestamp": 58927562, 
+        "src": "ENB", 
+        "idx": 170, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=3"
+        ], 
+        "timestamp": 58927562, 
+        "src": "ENB", 
+        "idx": 171, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=14 PAD: len=7 "
+        ], 
+        "timestamp": 58927562, 
+        "src": "ENB", 
+        "idx": 172, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 777, 
+        "timestamp": 58927562, 
+        "channel": "NPDCCH", 
+        "idx": 173, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=3 n_rep=1 tb_len=28 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 779, 
+        "timestamp": 58927579, 
+        "channel": "NPDSCH", 
+        "idx": 174, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 781, 
+        "timestamp": 58927598, 
+        "channel": "NPDCCH", 
+        "idx": 175, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-7.6 epre=-68.1"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 780, 
+        "timestamp": 58927599, 
+        "channel": "NPUSCH", 
+        "idx": 176, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 9, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 780, 
+        "timestamp": 58927614, 
+        "channel": "NPUSCH", 
+        "idx": 177, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 783, 
+        "timestamp": 58927619, 
+        "channel": "NPDCCH", 
+        "idx": 178, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=15.3 epre=-71.2 ta=2.0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 784, 
+        "timestamp": 58927632, 
+        "channel": "NPUSCH", 
+        "idx": 179, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "PAD: len=0 PAD: len=0 SBSR: lcg=0 b=14 LCID:3 len=2 "
+        ], 
+        "timestamp": 58927632, 
+        "src": "ENB", 
+        "idx": 180, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=4"
+        ], 
+        "timestamp": 58927632, 
+        "src": "ENB", 
+        "idx": 181, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 784, 
+        "timestamp": 58927632, 
+        "channel": "NPDCCH", 
+        "idx": 182, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-382.3 epre=-74.8"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 785, 
+        "timestamp": 58927650, 
+        "channel": "NPUSCH", 
+        "idx": 183, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=10 n_sc=12 n_sc_start=0 n_rep=1 tb_len=85 mod=2 rv_idx=0 crc=OK snr=16.6 epre=-71.7 ta=2.0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 785, 
+        "timestamp": 58927654, 
+        "channel": "NPUSCH", 
+        "idx": 184, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=76 PAD: len=4 "
+        ], 
+        "timestamp": 58927654, 
+        "src": "ENB", 
+        "idx": 185, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=5"
+        ], 
+        "timestamp": 58927654, 
+        "src": "ENB", 
+        "idx": 186, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UL Information Transfer", 
+            "{", 
+            "  message c1: ulInformationTransfer-r13: {", 
+            "    criticalExtensions ulInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '27F8209B11010201DA280908696E7465726E65747B003180C0231101000011037765620870617373776F726480211001080010810600000000830600000000000A00001000001600'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927654, 
+        "src": "ENB", 
+        "idx": 187, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "ESM: ESM information response", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x2 (Integrity protected and ciphered)", 
+            "Auth code = 0xf8209b11", 
+            "Sequence number = 0x01", 
+            "Protocol discriminator = 0x2 (EPS Session Management)", 
+            "EPS bearer identity = 0", 
+            "Procedure transaction identity = 1", 
+            "Message type = 0xda (ESM information response)", 
+            "Access point name = \"internet\"", 
+            "Extended protocol configuration options:", 
+            "  Ext = 1", 
+            "  Configuration protocol = 0", 
+            "  Protocol ID = 0xc023 (PAP)", 
+            "  Data = 01 00 00 11 03 77 65 62 08 70 61 73 73 77 6f 72 64", 
+            "  Protocol ID = 0x8021 (IPCP)", 
+            "  Data = 01 08 00 10 81 06 00 00 00 00 83 06 00 00 00 00", 
+            "  Protocol ID = 0x000a (IP address allocation via NAS signalling)", 
+            "  Data =", 
+            "  Protocol ID = 0x0010 (IPv4 Link MTU Request)", 
+            "  Data =", 
+            "  Protocol ID = 0x0016 (APN rate control support indicator)", 
+            "  Data ="
+        ], 
+        "timestamp": 58927654, 
+        "src": "ENB", 
+        "idx": 188, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Uplink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-uplinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '27F8209B11010201DA280908696E7465726E65747B003180C0231101000011037765620870617373776F726480211001080010810600000000830600000000000A00001000001600'H", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927654, 
+        "src": "ENB", 
+        "idx": 189
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Connection establishment indication", 
+            "initiatingMessage: {", 
+            "  procedureCode id-ConnectionEstablishmentIndication,", 
+            "  criticality reject,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality ignore,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality ignore,", 
+            "        value 1", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927655, 
+        "src": "ENB", 
+        "idx": 190
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UE Capability Enquiry", 
+            "{", 
+            "  message c1: ueCapabilityEnquiry-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: ueCapabilityEnquiry-r13: {", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927655, 
+        "src": "ENB", 
+        "idx": 191, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '277263A1500207420125060000F110000100415201C101091C08696E7465726E6574066D6E63303031066D636330303104677072730501C0A80302917B00158080210A0300000A81060808080800160400000000500BF600F11080010199D41B7E3408031F19F1031F11F264028108F26A0105'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927656, 
+        "src": "ENB", 
+        "idx": 192
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "EMM: Attach accept", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x2 (Integrity protected and ciphered)", 
+            "Auth code = 0x7263a150", 
+            "Sequence number = 0x02", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x42 (Attach accept)", 
+            "EPS attach result = 1 (EPS only)", 
+            "T3412 value:", 
+            "  Value = 5", 
+            "  Unit = 1 (1 minute)", 
+            "TAI list:", 
+            "  Length = 6", 
+            "  Data = 00 00 f1 10 00 01", 
+            "ESM message container:", 
+            "  Protocol discriminator = 0x2 (EPS Session Management)", 
+            "  EPS bearer identity = 5", 
+            "  Procedure transaction identity = 1", 
+            "  Message type = 0xc1 (Activate default EPS bearer context request)", 
+            "  EPS Qos:", 
+            "    QCI = 9", 
+            "  Access point name = \"internet.mnc001.mcc001.gprs\"", 
+            "  PDN address:", 
+            "    PDN type = 1 (IPv4)", 
+            "    IPv4 = 192.168.3.2", 
+            "  Control plane only indication = 1", 
+            "  Extended protocol configuration options:", 
+            "    Ext = 1", 
+            "    Configuration protocol = 0", 
+            "    Protocol ID = 0x8021 (IPCP)", 
+            "    Data = 03 00 00 0a 81 06 08 08 08 08", 
+            "    Protocol ID = 0x0016 (APN rate control parameters)", 
+            "    Data = 00 00 00 00", 
+            "GUTI:", 
+            "  MCC = 001", 
+            "  MNC = 01 ", 
+            "  MME Group ID = 32769", 
+            "  MME Code = 1", 
+            "  M-TMSI = 0x99d41b7e", 
+            "Emergency number list:", 
+            "  Length = 8", 
+            "  Data = 03 1f 19 f1 03 1f 11 f2", 
+            "EPS network feature support:", 
+            "  0x81 (CP CIoT=1, ERw/oPDN=0, ESRPS=0, CS-LCS=0, EPC-LCS=0, EMC BS=0, IMS VoPS=1)", 
+            "  0x08 (15 bearers=0, IWK N26=0, RestrictDCNR=0, RestrictEC=0, ePCO=1, HC-CP CIoT=0, S1-U data=0, UP CIoT=0)", 
+            "Additional update result = 0x02 (SMS only)", 
+            "T3324 value:", 
+            "  Value = 5", 
+            "  Unit = 0 (2 seconds)"
+        ], 
+        "timestamp": 58927656, 
+        "src": "ENB", 
+        "idx": 193, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '277263A1500207420125060000F110000100415201C101091C08696E7465726E6574066D6E63303031066D636330303104677072730501C0A80302917B00158080210A0300000A81060808080800160400000000500BF600F11080010199D41B7E3408031F19F1031F11F264028108F26A0105'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927656, 
+        "src": "ENB", 
+        "idx": 194, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=6"
+        ], 
+        "timestamp": 58927658, 
+        "src": "ENB", 
+        "idx": 195, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=0 FI=01 E=1 SN=4"
+        ], 
+        "timestamp": 58927658, 
+        "src": "ENB", 
+        "idx": 196, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=80 "
+        ], 
+        "timestamp": 58927658, 
+        "src": "ENB", 
+        "idx": 197, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 787, 
+        "timestamp": 58927658, 
+        "channel": "NPDCCH", 
+        "idx": 198, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 787, 
+        "timestamp": 58927658, 
+        "channel": "NPDCCH", 
+        "idx": 199, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 7, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=8 n_rep=1 tb_len=85 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 787, 
+        "timestamp": 58927663, 
+        "channel": "NPDSCH", 
+        "idx": 200, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 262, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-14.4 epre=-65.3"
+        ], 
+        "ue_id": 6, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 790, 
+        "timestamp": 58927700, 
+        "channel": "NPUSCH", 
+        "idx": 201, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927700, 
+        "src": "ENB", 
+        "idx": 202, 
+        "ue_id": 6
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 790, 
+        "timestamp": 58927706, 
+        "channel": "NPUSCH", 
+        "idx": 203, 
+        "cell": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=10 E=0 SN=5"
+        ], 
+        "timestamp": 58927722, 
+        "src": "ENB", 
+        "idx": 204, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=46 PAD: len=4 "
+        ], 
+        "timestamp": 58927722, 
+        "src": "ENB", 
+        "idx": 205, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 793, 
+        "timestamp": 58927722, 
+        "channel": "NPDCCH", 
+        "idx": 206, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 793, 
+        "timestamp": 58927722, 
+        "channel": "NPDCCH", 
+        "idx": 207, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=5 n_rep=1 tb_len=53 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 794, 
+        "timestamp": 58927729, 
+        "channel": "NPDSCH", 
+        "idx": 208, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 7, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-17.4 epre=-68.6"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 796, 
+        "timestamp": 58927764, 
+        "channel": "NPUSCH", 
+        "idx": 209, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 796, 
+        "timestamp": 58927766, 
+        "channel": "NPUSCH", 
+        "idx": 210, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 800, 
+        "timestamp": 58927789, 
+        "channel": "NPDCCH", 
+        "idx": 211, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 800, 
+        "timestamp": 58927789, 
+        "channel": "NPDCCH", 
+        "idx": 212, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=17.4 epre=-71.0 ta=1.6"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 801, 
+        "timestamp": 58927802, 
+        "channel": "NPUSCH", 
+        "idx": 213, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "PAD: len=0 PAD: len=0 SBSR: lcg=0 b=11 LCID:3 len=2 "
+        ], 
+        "timestamp": 58927802, 
+        "src": "ENB", 
+        "idx": 214, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=6"
+        ], 
+        "timestamp": 58927802, 
+        "src": "ENB", 
+        "idx": 215, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 803, 
+        "timestamp": 58927818, 
+        "channel": "NPDCCH", 
+        "idx": 216, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 7, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-382.3 epre=-76.2"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 803, 
+        "timestamp": 58927834, 
+        "channel": "NPUSCH", 
+        "idx": 217, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=6 n_sc=12 n_sc_start=0 n_rep=1 tb_len=51 mod=2 rv_idx=0 crc=OK snr=17.0 epre=-71.0 ta=2.1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 804, 
+        "timestamp": 58927836, 
+        "channel": "NPUSCH", 
+        "idx": 218, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 LCID:3 len=44 PAD: len=2 "
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 219, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=1 SN=6"
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 220, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UE Capability Information", 
+            "{", 
+            "  message c1: ueCapabilityInformation-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions ueCapabilityInformation-r13: {", 
+            "      ue-Capability-r13 {", 
+            "        accessStratumRelease-r13 rel13,", 
+            "        ue-Category-NB-r13 nb1,", 
+            "        phyLayerParameters-r13 {", 
+            "          multiTone-r13 supported,", 
+            "          multiCarrier-r13 supported", 
+            "        },", 
+            "        rf-Parameters-r13 {", 
+            "          supportedBandList-r13 {", 
+            "            {", 
+            "              band-r13 1", 
+            "            },", 
+            "            {", 
+            "              band-r13 2", 
+            "            },", 
+            "            {", 
+            "              band-r13 3", 
+            "            },", 
+            "            {", 
+            "              band-r13 4", 
+            "            },", 
+            "            {", 
+            "              band-r13 5", 
+            "            },", 
+            "            {", 
+            "              band-r13 8", 
+            "            },", 
+            "            {", 
+            "              band-r13 12", 
+            "            },", 
+            "            {", 
+            "              band-r13 13", 
+            "            },", 
+            "            {", 
+            "              band-r13 17", 
+            "            },", 
+            "            {", 
+            "              band-r13 18", 
+            "            },", 
+            "            {", 
+            "              band-r13 19", 
+            "            },", 
+            "            {", 
+            "              band-r13 20", 
+            "            },", 
+            "            {", 
+            "              band-r13 25", 
+            "            },", 
+            "            {", 
+            "              band-r13 26", 
+            "            },", 
+            "            {", 
+            "              band-r13 28", 
+            "            },", 
+            "            {", 
+            "              band-r13 66", 
+            "            },", 
+            "            {", 
+            "              band-r13 70", 
+            "            },", 
+            "            {", 
+            "              band-r13 71", 
+            "            },", 
+            "            {", 
+            "              band-r13 85", 
+            "            }", 
+            "          },", 
+            "          multiNS-Pmax-r13 supported", 
+            "        }", 
+            "      },", 
+            "      ue-RadioPagingInfo-r13 {", 
+            "        ue-Category-NB-r13 nb1", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 221, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 UE capability info indication", 
+            "initiatingMessage: {", 
+            "  procedureCode id-UECapabilityInfoIndication,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-UERadioCapability,", 
+            "        criticality ignore,", 
+            "        value '11880E90000202018100E0B06040221209860321B209148C54061904074800010100C08070583020110904C30190D9048A462A20'H", 
+            "      },", 
+            "      {", 
+            "        id id-UERadioCapabilityForPaging,", 
+            "        criticality ignore,", 
+            "        value '001400'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 222
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: UL Information Transfer", 
+            "{", 
+            "  message c1: ulInformationTransfer-r13: {", 
+            "    criticalExtensions ulInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '273096B87A02074300035200C2'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 223, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "EMM: Attach complete", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x2 (Integrity protected and ciphered)", 
+            "Auth code = 0x3096b87a", 
+            "Sequence number = 0x02", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x43 (Attach complete)", 
+            "ESM message container:", 
+            "  Protocol discriminator = 0x2 (EPS Session Management)", 
+            "  EPS bearer identity = 5", 
+            "  Procedure transaction identity = 0", 
+            "  Message type = 0xc2 (Activate default EPS bearer context accept)"
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 224, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Uplink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-uplinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '273096B87A02074300035200C2'H", 
+            "      },", 
+            "      {", 
+            "        id id-EUTRAN-CGI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          cell-ID '1A2D101'H", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-TAI,", 
+            "        criticality ignore,", 
+            "        value {", 
+            "          pLMNidentity '00F110'H,", 
+            "          tAC '0001'H", 
+            "        }", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927836, 
+        "src": "ENB", 
+        "idx": 225
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 Downlink nas transport", 
+            "initiatingMessage: {", 
+            "  procedureCode id-downlinkNASTransport,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-NAS-PDU,", 
+            "        criticality reject,", 
+            "        value '271CB64B1E030761431081C176589E9EBFCD7490B34CBFBFE56B450981C176589E9EBFCD7446234791809180227023490100'H", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927837, 
+        "src": "ENB", 
+        "idx": 226
+    }, 
+    {
+        "layer": "NAS", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "EMM: EMM information", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x2 (Integrity protected and ciphered)", 
+            "Auth code = 0x1cb64b1e", 
+            "Sequence number = 0x03", 
+            "Protocol discriminator = 0x7 (EPS Mobility Management)", 
+            "Security header = 0x0 (Plain NAS message, not security protected)", 
+            "Message type = 0x61 (EMM information)", 
+            "Full name for network:", 
+            "  Length = 16", 
+            "  Data = 81 c1 76 58 9e 9e bf cd 74 90 b3 4c bf bf e5 6b", 
+            "Short name for network:", 
+            "  Length = 9", 
+            "  Data = 81 c1 76 58 9e 9e bf cd 74", 
+            "Local time zone = 35", 
+            "Universal time and local time zone:", 
+            "  Data = 91 80 91 80 22 70 23", 
+            "Network daylight saving time:", 
+            "  Length = 1", 
+            "  Data = 00"
+        ], 
+        "timestamp": 58927837, 
+        "src": "ENB", 
+        "idx": 227, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: DL Information Transfer", 
+            "{", 
+            "  message c1: dlInformationTransfer-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: dlInformationTransfer-r13: {", 
+            "      dedicatedInfoNAS-r13 '271CB64B1E030761431081C176589E9EBFCD7490B34CBFBFE56B450981C176589E9EBFCD7446234791809180227023490100'H", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58927837, 
+        "src": "ENB", 
+        "idx": 228, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=7"
+        ], 
+        "timestamp": 58927850, 
+        "src": "ENB", 
+        "idx": 229, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=6"
+        ], 
+        "timestamp": 58927850, 
+        "src": "ENB", 
+        "idx": 230, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=55 PAD: len=1 "
+        ], 
+        "timestamp": 58927850, 
+        "src": "ENB", 
+        "idx": 231, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 4, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 806, 
+        "timestamp": 58927850, 
+        "channel": "NPDCCH", 
+        "idx": 232, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 806, 
+        "timestamp": 58927852, 
+        "channel": "NPDCCH", 
+        "idx": 233, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=6 n_rep=1 tb_len=63 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 807, 
+        "timestamp": 58927857, 
+        "channel": "NPDSCH", 
+        "idx": 234, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 809, 
+        "timestamp": 58927895, 
+        "channel": "NPUSCH", 
+        "idx": 235, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 264, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-13.1 epre=-65.5"
+        ], 
+        "ue_id": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 810, 
+        "timestamp": 58927897, 
+        "channel": "NPUSCH", 
+        "idx": 236, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927897, 
+        "src": "ENB", 
+        "idx": 237, 
+        "ue_id": 8
+    }, 
+    {
+        "frame": 811, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=7 ta=3 snr=56.3 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927907, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 238, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927907, 
+        "src": "ENB", 
+        "idx": 239, 
+        "ue_id": 9
+    }, 
+    {
+        "frame": 811, 
+        "slot": 2, 
+        "layer": "PHY", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "n_init=7 ta=3 snr=56.3 cfg_id=0 n_rep=6 n_sc_start=12"
+        ], 
+        "timestamp": 58927907, 
+        "src": "ENB", 
+        "channel": "NPRACH", 
+        "idx": 240, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Allocating new UE"
+        ], 
+        "timestamp": 58927907, 
+        "src": "ENB", 
+        "idx": 241, 
+        "ue_id": 10
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=19"
+        ], 
+        "timestamp": 58927914, 
+        "src": "ENB", 
+        "idx": 242
+    }, 
+    {
+        "rnti": 203, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 812, 
+        "timestamp": 58927914, 
+        "idx": 243, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "RAR: rapid=19"
+        ], 
+        "timestamp": 58927914, 
+        "src": "ENB", 
+        "idx": 244
+    }, 
+    {
+        "rnti": 203, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n1"
+        ], 
+        "channel": "NPDCCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 812, 
+        "timestamp": 58927914, 
+        "idx": 245, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 203, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 7, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 815, 
+        "timestamp": 58927943, 
+        "idx": 246, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 203, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "harq=ra n_sf=2 n_rep=1 tb_len=13"
+        ], 
+        "channel": "NPDSCH", 
+        "slot": 8, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 815, 
+        "timestamp": 58927944, 
+        "idx": 247, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 816, 
+        "timestamp": 58927947, 
+        "channel": "NPDCCH", 
+        "idx": 248, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=KO snr=-10.7 epre=-124.6 ta=-1.6"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 817, 
+        "timestamp": 58927960, 
+        "channel": "NPUSCH", 
+        "idx": 249, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 265, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=OK snr=30.6 epre=-67.8"
+        ], 
+        "ue_id": 9, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 817, 
+        "timestamp": 58927968, 
+        "channel": "NPUSCH", 
+        "idx": 250, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 4, 
+        "data": [
+            "mac_crnti=0x0101: resuming connection of ue_id=0x0001"
+        ], 
+        "timestamp": 58927968, 
+        "src": "ENB", 
+        "idx": 251, 
+        "ue_id": 9
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "CRNTI=0x0101 SBSR: lcg=0 b=0 LCID:3 len=2 PAD: len=1 "
+        ], 
+        "timestamp": 58927968, 
+        "src": "ENB", 
+        "idx": 252, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=7"
+        ], 
+        "timestamp": 58927968, 
+        "src": "ENB", 
+        "idx": 253, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58927968, 
+        "src": "ENB", 
+        "idx": 254, 
+        "ue_id": 9
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 2, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-68.4"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 817, 
+        "timestamp": 58927969, 
+        "channel": "NPUSCH", 
+        "idx": 255, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 819, 
+        "timestamp": 58927978, 
+        "channel": "NPDCCH", 
+        "idx": 256, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 819, 
+        "timestamp": 58927978, 
+        "channel": "NPDCCH", 
+        "idx": 257, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=16.8 epre=-70.6 ta=-0.5"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 822, 
+        "timestamp": 58928011, 
+        "channel": "NPUSCH", 
+        "idx": 258, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SBSR: lcg=0 b=0 PAD: len=4 "
+        ], 
+        "timestamp": 58928011, 
+        "src": "ENB", 
+        "idx": 259, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-5.5 epre=-89.0"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 822, 
+        "timestamp": 58928018, 
+        "channel": "NPUSCH", 
+        "idx": 260, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 6, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 825, 
+        "timestamp": 58928042, 
+        "channel": "NPDCCH", 
+        "idx": 261, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 5, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-11.3 epre=-129.6"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 828, 
+        "timestamp": 58928082, 
+        "channel": "NPUSCH", 
+        "idx": 262, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 1, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 832, 
+        "timestamp": 58928107, 
+        "channel": "NPDCCH", 
+        "idx": 263, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 0, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=1 crc=KO snr=-12.9 epre=-127.6"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 835, 
+        "timestamp": 58928147, 
+        "channel": "NPUSCH", 
+        "idx": 264, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 4, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=16 dci=n0"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 838, 
+        "timestamp": 58928170, 
+        "channel": "NPDCCH", 
+        "idx": 265, 
+        "cell": 2
+    }, 
+    {
+        "rnti": 266, 
+        "slot": 3, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=1 n_sc_start=0 n_rep=1 tb_len=11 mod=2 rv_idx=0 crc=KO snr=-382.3 epre=-115.2"
+        ], 
+        "ue_id": 10, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 841, 
+        "timestamp": 58928210, 
+        "channel": "NPUSCH", 
+        "idx": 266, 
+        "cell": 2
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58928210, 
+        "src": "ENB", 
+        "idx": 267, 
+        "ue_id": 10
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 UE context release request", 
+            "initiatingMessage: {", 
+            "  procedureCode id-UEContextReleaseRequest,", 
+            "  criticality ignore,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality reject,", 
+            "        value 1", 
+            "      },", 
+            "      {", 
+            "        id id-Cause,", 
+            "        criticality ignore,", 
+            "        value radioNetwork: user-inactivity", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58937850, 
+        "src": "ENB", 
+        "idx": 268
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "FROM", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 UE context release command", 
+            "initiatingMessage: {", 
+            "  procedureCode id-UEContextRelease,", 
+            "  criticality reject,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-UE-S1AP-IDs,", 
+            "        criticality reject,", 
+            "        value uE-S1AP-ID-pair: {", 
+            "          mME-UE-S1AP-ID 100,", 
+            "          eNB-UE-S1AP-ID 1", 
+            "        }", 
+            "      },", 
+            "      {", 
+            "        id id-Cause,", 
+            "        criticality ignore,", 
+            "        value radioNetwork: user-inactivity", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58937851, 
+        "src": "ENB", 
+        "idx": 269
+    }, 
+    {
+        "layer": "S1AP", 
+        "dir": "TO", 
+        "level": 4, 
+        "data": [
+            "127.0.1.100:36412 UE context release complete", 
+            "successfulOutcome: {", 
+            "  procedureCode id-UEContextRelease,", 
+            "  criticality reject,", 
+            "  value {", 
+            "    protocolIEs {", 
+            "      {", 
+            "        id id-MME-UE-S1AP-ID,", 
+            "        criticality ignore,", 
+            "        value 100", 
+            "      },", 
+            "      {", 
+            "        id id-eNB-UE-S1AP-ID,", 
+            "        criticality ignore,", 
+            "        value 1", 
+            "      }", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58937851, 
+        "src": "ENB", 
+        "idx": 270
+    }, 
+    {
+        "layer": "RRC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "DCCH-NB: RRC Connection Release", 
+            "{", 
+            "  message c1: rrcConnectionRelease-r13: {", 
+            "    rrc-TransactionIdentifier 0,", 
+            "    criticalExtensions c1: rrcConnectionRelease-r13: {", 
+            "      releaseCause-r13 other", 
+            "    }", 
+            "  }", 
+            "}", 
+            ""
+        ], 
+        "timestamp": 58937851, 
+        "src": "ENB", 
+        "idx": 271, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=7"
+        ], 
+        "timestamp": 58937859, 
+        "src": "ENB", 
+        "idx": 272, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=4 PAD: len=2 "
+        ], 
+        "timestamp": 58937859, 
+        "src": "ENB", 
+        "idx": 273, 
+        "ue_id": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 3, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 783, 
+        "timestamp": 58937859, 
+        "channel": "NPDCCH", 
+        "idx": 274, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 8, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "n_sf=1 n_rep=1 tb_len=9 retx=0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 783, 
+        "timestamp": 58937864, 
+        "channel": "NPDSCH", 
+        "idx": 275, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_sc_start=0 n_rep=8 ack=1"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 785, 
+        "timestamp": 58937896, 
+        "channel": "NPUSCH", 
+        "idx": 276, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 2, 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "cce_index=0/2 L=2 n_rep=1 dci=n0"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 787, 
+        "timestamp": 58937898, 
+        "channel": "NPDCCH", 
+        "idx": 277, 
+        "cell": 1
+    }, 
+    {
+        "rnti": 257, 
+        "slot": 1, 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "sc_sp=1 n_ru=1 n_sc=12 n_sc_start=0 n_rep=1 tb_len=7 mod=2 rv_idx=0 crc=OK snr=17.8 epre=-70.4 ta=1.4"
+        ], 
+        "ue_id": 1, 
+        "src": "ENB", 
+        "layer": "PHY", 
+        "frame": 788, 
+        "timestamp": 58937911, 
+        "channel": "NPUSCH", 
+        "idx": 278, 
+        "cell": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "PAD: len=0 PAD: len=0 SBSR: lcg=0 b=0 LCID:3 len=2 "
+        ], 
+        "timestamp": 58937911, 
+        "src": "ENB", 
+        "idx": 279, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "RLC", 
+        "dir": "UL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=0 CPT=0 ACK_SN=8"
+        ], 
+        "timestamp": 58937911, 
+        "src": "ENB", 
+        "idx": 280, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "- ", 
+        "level": 3, 
+        "data": [
+            "Freeing UE"
+        ], 
+        "timestamp": 58937911, 
+        "src": "ENB", 
+        "idx": 281, 
+        "ue_id": 1
+    }
+]

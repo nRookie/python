@@ -1,0 +1,542 @@
+Python is famous for coming with batteries included. Sophisticated capabilities
+are available in the standard library. You can find modules for working with
+sockets, parsing CSV,JSON, and XML  files, and working with files and file paths.
+
+However great the packages included with Python are, there are many 
+fantastic projects available outside the standard library. These are most 
+often hosted at the Python Packaging Index(PyPI),historically known as the 
+Cheese Shop. At PyPI, you can find everything from Hello World to advance deep learning 
+libraries.
+
+In this tutorial, you'll cover how to upload your own package to PyPI. while getting your 
+project published is easier than it used to be, there are still a few steps involved.
+
+You'll learn how to:
+
+ - Prepare your Python package for publication
+ - Think about versioning
+ - Upload your package to PyPI 
+
+
+A small Python Package 
+
+This section will describe a small Python package that we'll use as an 
+example that can be published to PyPI. If you already have a package that you want to publish,
+feel free to skim this section and join up again at the beginning of the next section.
+
+The package that we'll use is called reader and is an application that can be 
+used to download and read Real Python articles. If you want to follow along,
+you can get the full source code from our GitHub repository.
+
+
+- The source code as shown and explained below is a simplified, but fully functional,
+version of the Real Python feed reader. Compared to the package published on PyPI and 
+this version lacks some error handling and extra options .
+
+First , have a look at the directory structure of reader. The package lives completely
+inside a directory that is also named reader:
+
+The source code of the package is in a reader subdirectory together with a configuration 
+file. There are a few tests in a separate subdirectory. The tests will not 
+be covered here, but you can find them in the GitHub repository. To learn more 
+about testing,see Anthony Shaw's great tutorial on Getting started with Testing in Python.
+
+
+If you're working with your own package, you may use a different structure or 
+have other files in your package directory. Our Python Application Layouts reference discusses several different options.
+The instructions in this guide will work independently of the layout you use.
+
+In the rest of this section, you'll see how the reader package works. In the next 
+section, you'll get a closer look at the special files, including setup.py, README.md,
+and MANIFEST.in, that are needed to publish your package.
+
+Using the Real Python Reader 
+
+reader is a very basic web feed reader that can download the latest Real Python 
+articles from the Real Python feed.
+
+Here is an example of using the reader to get the list of the latest articles:
+
+
+Notice that each article is numbered. To read one particular article, you use the 
+same command but include the number of the article as well. For instance,
+to read How to Publish an Open-Source Python Package to PyPi, you add 0 to the command
+
+
+This prints the full article to the console using the Markdown text format.
+
+
+Note: python -m is used to run a library module or package instead of a script.
+If you run a package, the contents of the file __main__.py will be executed. See
+different Ways of Calling a Package for more info.
+
+
+By changing the article number, you can read any of the available articles.
+
+A Quick Look at the Code.
+
+The details of how reader works are not important for the purpose of this tutorial.
+However, if you are interested in seeing the implementation, you can expand the sections
+below. The package consists of five files.
+
+config.txt
+
+config.txt is a configuration file used to specify the URL of the feed of Real
+Python tutorials. It's a text file that can be read by the configparser standard 
+library:
+
+Config File 
+
+# config.txt 
+
+[feed]
+url = https://realpython.com/atom.XML
+
+In general, such a config file contains key-value pairs separated into sections.
+This particular file contains only one section(feed) and one key(url).
+
+Note: A configuration file is probably overkill for this simple package.
+We include it here for demonstration purposes.
+
+__main__.py
+
+The first source code file we'll look at is __main__.py . The double underscores 
+indicate that this file has a special meaning in Python. Indeed, when running 
+a package as a script with -m as above, Python executes the contents of the __main__.py 
+file.
+
+In other words, __main__.py acts as the entry point of our program and takes care of the main flow,
+calling other parts as needed:
+
+Python 
+
+__main.py 
+
+from configparser import ConfigParser 
+from importlib import resources 
+import sys 
+
+from reader import feed
+from reader import viewer
+
+def main():
+    ''' Read the real python article feed '''
+    # Read URL of the Real Python feed from config file 
+    cfg = ConfigParser()
+    cfg.read_string(resources.read_text("reader","config.txt"))
+    url = cfg.get("feed","url")
+
+
+    # if an article ID is given , show the article 
+    if len(sys.argv) > 1:
+        article = feed.get_article(url, sys.argv[1])
+        viewer.show(article)
+    
+    # if no ID is given, show a list of all articles 
+    else:
+        site = feed.get_site(url)
+        titles = feed.get_titles(url)
+        viewer.show_list(site,titles)
+
+if __name__ == "__main__":
+    main()
+
+Notice that main() is called on the last line. If we do not call main(),
+then our program would not do anything. As you saw earlier, the program 
+can either lsit all articles or print one specific article. This is handled
+by the if-else inside main().
+
+To read the URL to the feed from the configuration file, we use configparser
+and importlib.resources. The latter is used to import non-code(or resource) 
+files from a package without having to worry about the full file path.
+It is especially helpful when publishing packages to PyPI where resource files
+might end up inside binary archives.
+
+importlib.resources became a part of the standard library in Python 3.7. If you are using an older version of 
+Python, you can use importlib_resources instead. This is a backport compatible 
+with Python 2.7, and 3.4 and above.
+importlib_resources can be installed from PyPI:
+
+pip install importlib_resources 
+
+
+__init__.py 
+
+The next file is __init__.py. Again, the double underscores in the filename tell us 
+that this is a special file. __init__.py represents the root of your package.
+It should usually be kept quite simple, but it's a good place to put package constants,
+documentation, and so on:
+
+
+__init__.py
+__version__ = "1.0.0"
+
+
+The special variable __version__ is a convention in Python for adding version 
+numbers to your package. It was introduced in PEP 396. We'll talk more about versioning 
+later.
+
+Variables defined in __init__.py become available as variables in the package namespace:
+
+import reader 
+reader.__version__ 
+
+feed.py 
+Looking at __main__.py, you'll see that two modules , feed and viewer, are 
+imported and used to read from the feed and show the results. These modules 
+do most of the actual work.
+
+First consider feed.py. This file contains functions for reading from a web feed 
+and parsing the result. Luckily there are already great libraries available to do 
+this .feed.py depends on two modules that are already available on PyPI:
+feedparser and html2text.
+
+feed.py contains several functions. We'll discuss them one at a time.
+
+To avoid reading from the web feed more than necessary, we first create a 
+function that remembers the feed the first time it's read:
+
+# feed.py
+import feedparser
+import html2text 
+
+_CACHED_FEEDS = dict() 
+
+def _feed(url):
+    ''' Only read a feed once, by caching its contents '''
+    if url not in _CACHED_FEEDS:
+        _CACHED_FEEDS[url] = feedparser.parse(url)
+    return _CACHED_FEEDS[url]
+
+
+feedparser.parse() reads a feed from the web and returns it in a structure
+that looks like a dictionary. To avoid downloading the feed more than once,
+it's stored in _CACHED_FEEDS and reused for later calls to _feed(). Both 
+_CACHED_FEEDS and _feed() are prefixed by an underscore to indicate that they are support 
+objects not meant to be used directly.
+
+
+We can get some basic information about the feed by looking in the .feed 
+metadata. The following function picks out the title and link to the web site
+containing the feed:
+
+Python 
+
+def get_site(url):
+    ''' Get name and link to web site of the feed'''
+    info = _feed(url).feed 
+    return f"{info.title} ({info.link})
+
+In order to get the contents of one article, we use its index in the .entries
+list as an article ID:
+
+def get_article(url,article_id):
+    ''' Get article from feed with the given ID"""
+    articles = _feed(url).entries
+    article = articles[int(article_id)]
+    html = article.content[0].value 
+    text = html2text.html2text(html)
+    return f"# {artilce.title} \n\n{text}"
+
+After picking the correct article out of the .entries list, we find 
+the text of the article as HTML on line 28. Next, html2text does a decent job of 
+translating the HTML into much more readable text. As the HTML doesn't contain the title of 
+the article, the title is added before returning .
+
+
+
+viewver.py 
+
+The final module is viewer.py At the moment, it consists of two very simple 
+funcitons. In practice, we could have used print() directly in __main__.py 
+instead of calling viewer functions. However, having the fucntionality split off 
+makes it easier to replace it later with something more advanced. Maybe we could 
+add a GUI interface in a later version?
+
+viewer.py 
+
+def show(article):
+    ''' Show one article '''
+    print(article)
+
+def show_list(site, titles):
+    ''' show list of articles ''' 
+    print(f"The latest tutorials from {site}")
+    for article_id, title in enumerate(titles):
+        print(f"{article_id:>3"}{title}")
+
+show() simply prints one article to the console, while show_list() prints 
+a list of titles. The latter also creates article IDs that are used when choosing 
+to read on particular article.
+
+Different Ways of Calling a Package 
+
+One challenge when your projects grow in complexity is communicating to the 
+user how to use your project. Since the package consists of four 
+different source code files, how does the user know which file to call 
+to run reader?
+
+The python interpreter program has an -m option that allows you to specify 
+a module name instead of a file name. For instance, if you have a script called 
+hello.py, the following two commands are equivalent:
+
+python hello.py 
+
+python -m hello
+
+One advantage of the latter is that it allows you to call modules that are built 
+into Python as well. One example is calling antigravity:
+
+Another advantage of using -m is that it works for packages as well 
+as modules. As you saw earlier, you can call the reader package 
+with -m:
+
+python -m reader 
+
+Since reader is a package, the name only refers to a directory.
+How does Python decide which code inside that directory to run?
+It looks for a file named __main__.py. If such a file exists,
+it is executed. If __main__.py does not exist, then an error message 
+is printed:
+
+python -m math 
+
+
+In this example, you see that the math standard library has not defined a 
+__main__.py file.
+
+If you are creating a package that is supposed to be executed, you should 
+include a __main__.py file. Later, you'll see how you can also create entry 
+points to your package that will behave like regular programs.
+
+Preparing Your Package for publication
+Now you've got package you want to publish, or maybe you copied our package.
+Which steps are necessary before you can upload the package to PyPI?
+
+Naming Your Package 
+
+The first- and possibly the hardest-step is to come up with a good name for 
+your package. All packages on PYPI need to have unique names. with more than 150,000
+packages already on PYPI, chances are that your favorite name is already taken.
+
+You might need to brainstorm and do some research to find the perfect name. Use the PyPI
+search to check if a name is already taken. The name that you come up with will be visible on 
+PyPI.
+
+To make the reader package easier to find on PyPI, we give it a more 
+descriptive name and call it realpython-reader. The same name will be used to install the 
+package using pip:
+
+pip install realpython-reader
+
+Even though we use realpython-reader as PYPI name , the package is 
+still called reader when it's imported :
+
+import reader 
+help(reader)
+
+from reader import feed 
+feed.get_titles() 
+
+
+As you see, you can use different names for your package on PyPi
+and when importing. However, if you use the same name or very similar
+names , then it will be easier for your users .
+
+Configuring Your Package 
+In order for your package to be uploaded to PyPI, you need to provide some 
+basic information about it. This information is typically provided in the form of 
+a setup.py file. There are initiatives that try to simplify this collection of 
+information. At the moment through, setup.py is the only fully supported way of 
+providing information about your package.
+
+The setup.py file should be placed in the top folder of your package. A fairly minimal 
+setup.py for reader looks like this:
+
+import pathlib
+from setuptools import setup 
+
+# The directory containing this file 
+
+HERE = pathlib.Path(__file__).parent
+
+# The text of the README file
+README = (HERE / "README.md").read_text()
+
+# This call to setup() does all the work 
+
+setup(
+    name="realpython-reader",
+    version="1.0.0",
+    description="Read the latest Real Python tutorials",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    url="https://github.com/realpython/reader",
+    author="Real Python",
+    author_email="office@realpython.com",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+    ]
+    packages=["reader"],
+    include_package_data=True,
+    install_requires=["feedparser","html2text"],
+    entry_points={
+        "console_scripts":[
+            "realpython-reader.__main__:main",
+        ]
+    }
+)
+
+
+We will only cover some of the options available in setuptools here.
+The documentation does a good job of going into all the detail.
+
+The parameters that are 100% necessary in the call to setup() are the following:
+
+- name : the name of your package as it will appear on PyPI 
+- version: the current version of your package 
+- packages: the packages and subpackages containing your source code .
+
+We will talk more about versions later. The packages parameter takes 
+a list of packages. In our example, there is only one package:reader.
+
+You also need to specify any subpackages. In more complicated projects, there 
+might be many packages to list. To simplify this job, setuptools includes 
+find_packages(), which does a good job of discovering all your subpackages.
+You could have used find_packages() in the reader proejct as follows:
+
+
+from setuptools import find_packages,setup 
+
+setup(
+    ...
+    packages=find_packages(exclude=("tests",)),
+    ...
+)
+
+
+While only name,version, and packages are required, your package becomes 
+much easier to find on PyPI if you add some more information. Have a look 
+at the realpython-reader page on PyPI and compare the information with setup.py 
+above. All the information comes from setup.py and README.md.
+
+The last two parameters to setup() deserve special mention:
+
+- install_requires is used to list any dependencies your package has to 
+third party libraries. The reader depends on feedparser and html2text,
+so they should be listed here.
+
+- entry_points is used to create scripts that call a function within your 
+package. In our example, we create a new script realpython that calls main() within the 
+reader/__main__.py file.
+
+
+Before releasing your package to the world , you should add some documentaiton.
+Depending on your package , the documentaiton can be as small as a simple 
+README file, or as big as a full web page with tutorials, example galleries,
+and an API reference.
+
+At a minimum, you should include a README file with your project. A good README 
+should quickly describe your project, as well as tell your users how to install and use your 
+package. Typically, you want to include your README as the long_description 
+argument to setup(). This will display your README on PyPI.
+
+
+Traditionally, PyPI has used reStructuredText for package documentaiton. However,
+since March 2018 Markdown has also been supported.
+
+Outside of PyPI, Markdown is more widely supported than reStructuredText.
+If you don't need any of the special features of reStructuredText, you'll be better off 
+keeping your README in Markdown. Note that you should use the setup() parameter long_description_content_type to 
+tell PyPI which format you are using. Valid values are text/markdown,text/x-rst,
+and text/plain 
+
+For bigger projects, you might want to offer more documentation than can reasonably fit in a 
+single file. In that case , you can use sites like GitHub or Read the Docs, and link to the 
+documentation using the url parameters. in the setup.py example above,
+url is used to link to the reader GitHubrepository.
+
+
+Versioning Your Package 
+
+Your package needs to have a version, and PyPI will only let you do one upload 
+of a particular version for a package.In other words, if you want to update your package 
+on PyPI , you need to increse the version number first. This is a good thing ,
+as it guarantees reproducibility: two systems with the same version of a 
+package should behave the same.
+
+There are many different schemes that can be used for your version number.
+For Python projects, PEP 440 gives some recommendations. However, in order to be 
+flexible, that PEP is complicated. For a simple project, stick with a simple versioning scheme .
+
+Semantic versioning is a good default scheme to use. The version number is given as three 
+numerical components , for instance 0.1.2 The components are called 
+MAJOR,MINOR and PATCH, and there are simple rules about when to increment each 
+component:
+
+- Increment the MAJOR version when you make incompatible API changes.
+
+- Increment the MINOR version when you add functionality in a backwards-compatible manenr.
+
+- Increment the PATCH version when you make backwards-compatible bug fixes.
+
+
+You may need to specify the version in different files inside your project .
+In the reader project, we specified the version both in setup.py and in
+reader/__init__.py. To make sure the version numbers are kept consistent,
+you can use a tool called Bumpversion.
+
+You can install Bumpversion from PyPI:
+
+pip install bumpversion 
+
+To increment the MINOR  version of reader, you would do something like this :
+
+bumpversion --current-version 1.0.0 minor setup.py reader/__init__.py 
+
+
+This would change the version number from 1.0.0 to 1.1.0 in both setup.py 
+and reader/__init__.py. To simplify the command, you can also give most 
+of the information in a configuration file. See the Bumpversion documentation for 
+details.
+
+
+Adding files to your package 
+
+Sometimes, ou'll have files inside your package that are not 
+source code files. Examples include data files, binaries, documentation,
+and -as we have in this project --configuration files.
+
+To tell setup() to include such files, you use a manifest file. For many 
+projects, you don't need to worry about the manifest, as setup() creates one that 
+includes all code files as well as README files.
+
+If you need to change the manifest, you create a manifest template which 
+must be named MANIFEST.in. This file specifies rules for what to include and 
+exclude:
+
+include reader/*.txt 
+
+This example will include all .txt files in the reader directory, which in effect is the 
+configuration file. See the documentation for a list of available rules .
+
+
+This example will include all .txt files in the reader directory, which in effect is the configuration 
+file. See the documentaiton for a list of available rules .
+
+
+IN addition to creating MANIFEST.in , you also need to tell setup() to copy these non-code files.
+This is done by setting the include_package_data argument to True:
+
+setup(
+    ...
+    include_package_data=True,
+    ...
+)
+
+
+The include_package_data argument controls whether non-code files are copied 
+when your package is installed.

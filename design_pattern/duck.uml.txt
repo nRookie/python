@@ -1,0 +1,42 @@
+@startuml
+interface LightStrategyAbstract
+{
+    void lights_on()
+}
+
+
+class Duck
+{
+    Attributes
+}
+
+interface QuackStrategyAbstract
+{
+    void quack()
+}
+
+class OneForTenSecondsStrategy
+{
+    void lights_on()
+}
+
+class LoudQuackStrategy
+{
+    quack()
+}
+
+class GentleQuackStrategy
+{
+    quack()
+}
+
+Duck o-- LightStrategyAbstract
+Duck o-- QuackStrategyAbstract
+
+class LoudQuackStrategy implements QuackStrategyAbstract
+
+class GentleQuackStrategy IMPLEMENTS QuackStrategyAbstract
+
+class OneForTenSecondsStrategy implements LightStrategyAbstract
+
+@enduml

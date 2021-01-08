@@ -1,0 +1,66 @@
+Now comes the question, how do we find out if our variable
+is a mutable or immutable object. For this we should
+understand what 'ID' and 'Type' functions are for.
+
+
+
+ID and Type
+
+The built-in function id() returns the identity of an object
+as an integer. This integer usually corresponds to the object's location
+in memory, although this i s specific to the Python implementation
+and the platform being used, The is operator compares the identity of two objects.
+
+The built-in function type() returns the type of an object.
+Let's look at a simple example
+
+''' Example 1 '''
+x = "Holberton"
+y = "Holberton"
+id(x)
+140135852055856
+id(y)
+140135852055856
+
+WE have now seen how to compare two simple string variables to find out
+the types and id's . So using these two functions, we can check to see how different types of
+objects are associated with variables and how objects can be changed.
+
+
+Mutable and Immutable Objcts 
+
+So as we dicussed earlier, a mutable object can change its state or
+contents and immutable objects cannot.
+
+Mutable objects :
+list, dict, set,byte array 
+Immutable objects:
+
+int,float, complex, string,tuple,frozen set [note:immutable version of set],
+bytes 
+
+A practical example to find out the mutability of object types.
+
+
+x = 10 
+x = y 
+
+We are creating an object of type int. identifiers x and y points to the same 
+object.
+
+id(x) = id(y) 
+id(y) = id(10)
+
+if we do a simple operation
+
+x= x+1 
+
+So what have we seen so far from the above examples?
+
+- Python handles mutable and immutable objects differently.
+
+- Immutable are quicker to access than mutable objects.
+
+- Mutable objects are great to use when you change the size of the object,
+example list,dict etc.. Immutables are used when you need to ensure that the object
+you made will always stay the same.

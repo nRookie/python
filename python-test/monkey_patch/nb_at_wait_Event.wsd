@@ -1,0 +1,84 @@
+    @startuml
+
+    actor robot as r
+
+    participant NB_ATKeywords as na
+
+    participant low_level_nb_at as llna
+
+
+    entity response_queue as rspq
+
+    participant low_level_uart_at as llua  
+
+    entity rx_queue as rxq
+    entity tx_queue as txq
+
+    participant module as m
+
+
+    loop when uart port is opened 
+    alt uart_write is set
+    txq -> m: send data
+
+    llua -> llua: unset uart_write
+
+    else uart_write is not set and there is data from module 
+    m -> rxq: recv data 
+    end
+    end 
+
+
+    r -> na : NB AT EXE CMD
+    activate na
+    na -> na : NB AT SEND CMD
+    activate na
+
+    na -> na: NB AT SEND DATA
+
+    activate na
+
+    na -> llna: uart write
+
+    activate llna
+
+    llna -> llua: ll uart write
+
+    activate llua
+
+    llua -> txq: enqueue
+
+    llua -> llua: set uart_write
+
+    llua -> llna:
+
+    deactivate llua
+
+    llna -> na:  
+    deactivate llna
+    deactivate na
+
+    na -> llna: wait rsp_counter increase
+    llna -> na:
+
+    deactivate na
+
+    na -> na: NB AT READ CMD RSP
+    activate na
+    alt enswith_str is not None 
+    na -> na: set expected_rsp_endswith to endwith_str
+    end
+    na -> llna: uart_read
+    activate llna
+    alt  remain_time >0 and response_queue is not empty
+    llna -> rspq: get data from response queue
+    rspq -> llna : return some data
+    llna -> na: return data 
+    else remain_time < 0
+    llna -> llna: wait rsp_counter decrease
+    llna -> na: raise Timeout Error
+    deactivate llna
+    end
+    na -> na: return data
+    deactivate na
+    @enduml

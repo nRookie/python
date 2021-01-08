@@ -1,0 +1,24 @@
+What are wheels?
+
+Wheels are the new standard of Python distribution and are intended to 
+replace eggs. Support is offered in pip >= 1.4 and setuptools >= 0.8
+
+Advantages of wheels 
+
+1. Faster installation for pure Python and native C extension packages.
+2. Avoids arbitrary code execution for installation. (Avoids setup.py)
+3. installation of a C extension does not require a compiler on Linux Windows or 
+macOS.
+4. Allows better caching for testing and continuous integration.
+5. Creates .pyc files as part of installation to ensure they match the Python
+interpreter used.
+6. More consistent installs across platforms and machines.
+
+What is this list?
+
+This site shows the top 360 most-downloaded packages on PYPI showing which 
+have been uploaded as wheel archives.
+    - Green packages offer wheels.
+    - White packages have no wheel archives uploaded (yet!).
+
+Packages that are known to be deprecated are not included.

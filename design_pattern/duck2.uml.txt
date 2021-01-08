@@ -1,0 +1,90 @@
+@startuml
+interface FlyBehavior
+{
+    fly()
+}
+
+class FlyWithWings
+{
+    fly()
+}
+
+
+class FlyNoWay
+{
+    fly()
+}
+
+
+interface QuackBehavior{
+    quack()
+}
+
+
+
+class Quack
+{
+    quack()
+}
+
+class Squeak
+{
+    quack()
+}
+
+class MuteQuack
+{
+    quack()
+}
+
+
+
+class Duck 
+{
+    FlyBehavior FlyBehavior
+    QuackBehavior QuackBehavior
+    performQuack()
+    performFly()
+    swim()
+    display()
+    SetFlyBehavior()
+    SetQuackBehavior()
+}
+
+class MallardDuck
+{
+    display()
+}
+
+class RedheadDuck
+{
+    display()
+}
+
+class RubberDuck
+{
+    display()
+}
+
+class DecoyDuck
+{
+    display()
+}
+
+
+
+Duck <|-- MallardDuck
+Duck <|-- RedheadDuck
+Duck <|-- RubberDuck
+Duck <|-- DecoyDuck
+
+class FlyNoWay implements FlyBehavior
+
+class FlyWithWings IMPLEMENTS FlyBehavior
+
+class Quack implements QuackBehavior
+
+class Squeak implements QuackBehavior
+
+class MuteQuack implements QuackBehavior
+@enduml

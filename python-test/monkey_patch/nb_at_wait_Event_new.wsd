@@ -1,0 +1,53 @@
+    @startuml nb at wait event new
+
+    actor robot as r
+
+    participant NB_ATKeywords as na
+
+    participant low_level_nb_at as llna
+
+    entity event as e
+    entity eventBuffer as eb
+    
+    r -> na: NB AT WAIT EVENT
+    activate na
+        na -> llna: uart_wait_event
+        activate e
+        activate llna
+            loop  when not timeout
+                llna -> llna: _parse_event_buffer()
+                activate llna
+                    llna -> eb: search event which match the keywords in the event buffer
+                    eb -> llna: return the event and remove the event which match the keywords from the buffer
+                    llna -> e: return the event and remove the event which match the keywords from the buffer
+                    deactivate llna
+
+                alt format is list
+                    llna -> llna: _split_event_to_list(event)
+                    activate llna
+                        llna -> e: split event as a list according to _EVENT_REGEXP
+                        e -> llna: return the splited event as a list
+                        alt successfully split the event as a list 
+                            llna -> llna: return the event list
+                        else  cannot successfully split the event as a list 
+                            llna -> llna : raise ValueError cannot decode the event
+                        end
+                        deactivate llna
+                    
+                else format is str
+                    llna -> e : decode event to string
+                    llna -> na : return the matched event as a string.
+                else format is bytes
+                    llna -> e : get event 
+                    llna -> na : return event as bytes
+                else format is others:
+                    llna -> na: raise ValueError un Supported format
+                end
+                deactivate llna
+                deactivate e
+
+            else raise timeout error
+            end
+        deactivate na
+
+    @enduml

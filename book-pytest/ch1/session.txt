@@ -1,0 +1,6 @@
+session
+
+
+pytest provides a nice delimiter for the start of the test session. A session is one invocation of pytest, including all of the tests run
+on possibly multiple directories. This definition of session becomes important when I talk about session scope in relation to pytest 
+fixtures in Specifying fixtures Scope.

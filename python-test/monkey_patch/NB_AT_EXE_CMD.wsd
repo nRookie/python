@@ -1,0 +1,65 @@
+    @startuml NB_AT_EXE_CMD
+
+    actor robot as r
+
+    participant NB_ATKeywords as na
+
+
+    entity response_queue as rspq
+
+    entity rxBuffer as rxb
+    entity rspBuffer as rspb
+    entity eventBuffer as eb
+
+    participant low_level_nb_at as llna
+
+    participant low_level_uart_at as llua  
+
+    entity rx_queue as rxq
+    entity tx_queue as txq
+
+    participant module as m
+
+
+
+    r -> na : NB AT EXE CMD
+    activate na
+        na -> na : NB AT SEND CMD
+        activate na
+            na -> na: NB AT SEND DATA
+            activate na
+                na -> llna: uart write
+                activate llna
+                    llna -> llua: ll uart write
+                    activate llua
+                        llua -> txq: enqueue
+                        llua -> llua: set uart_write
+                        llua -> llna:
+                        deactivate llua
+                    llna -> na:  
+                    deactivate llna
+                deactivate na
+            na -> llna: wait rsp_counter increase
+            llna -> na:
+            deactivate na
+        na -> na: NB AT READ CMD RSP
+        activate na
+            alt enswith_str is not None 
+                na -> na: set expected_rsp_endswith to endwith_str
+            end
+            na -> llna: uart_read
+            activate llna
+                alt  remain_time >0 and response_queue is not empty
+                    llna -> rspq: get data from response queue
+                    rspq -> llna : return some data
+                    llna -> na: return data 
+                else remain_time < 0
+                    llna -> llna: wait rsp_counter decrease
+                    llna -> na: raise Timeout Error
+                end
+                deactivate llna
+            na -> na: return data
+            deactivate na
+        na -> r : return data
+        deactivate na
+    @enduml

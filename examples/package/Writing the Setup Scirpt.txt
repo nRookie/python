@@ -1,0 +1,21 @@
+The data_files option can be used to specify additional
+files needed by the module distribution: configuration files,
+message catalogs, data files, anything which doesn't fit in the previous 
+categories.
+
+data_files specifies a sequence of (directory,files) pairs in the 
+following way:
+
+
+Each(directory,files) pair in the sequence specifies the 
+installation directory and the files to install there.
+
+
+Each file name in files is interpreted relative to the setup.py
+script at the top of the package source distribution. Note that 
+you can specify the directory where the data files will be installed,
+but you cannot rename the data files themselves.
+
+The directory should be a relative path. It is interpreted 
+relative to the installation prefix(Python's sys.prefix for system
+installations; site.USER_BASE for user installations). Distutils

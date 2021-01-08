@@ -1,0 +1,422 @@
+One of the strenghts of Python is that it comes with batteries included:
+it has a rich and versatile standard library that makes it one of the 
+best programming languages for writing scripts for the command line.
+But, if you write scripts for the command line, then you also need to provide a 
+good command line interface, which you can create with the Python argparse library.
+
+
+In this article, you'll learn:
+
+- What the Python argparse library is, and why it's important to use it 
+if you need to write command line scripts in Python.
+
+- How to use the Python argparse library to quickly create a simple CLI in Python
+
+- What the advanced usage of the Python argparse library is 
+
+This article is written for early intermediate Pythonistas who probably write scripts 
+in Python for their everyday work but have never implemented a command line 
+interface for their scripts.
+
+If that sounds like you, and you're used to setting variable values at the beginning 
+of your scripts or manually parsing the sys.argv system list instead of using a more 
+robust CLI development tool, then this article is for you.
+
+
+What is a Command Line interface ?
+
+The command line interface(also known as CLI) is a means to interact with a 
+command line script. Python comes with several different libraries that allow you 
+to write a command line interface for your scripts, but the standard way for 
+creating a CLI in Python is currently the Python argparse library.
+
+The Python argparse library was released as part of the standard library with 
+Python 3.2 on Feburary the 20th,2011. It was introduced with Python Enhancement 
+Proposal 389 and is now the standard way to create a CLI in Python, both in 2.7 and 
+3.2+versions.
+
+This new module was released as a replacement for the older getopt and optparse
+modules because they were lacking some important features.
+
+The Python argparse library:
+
+- Allows the use of positional arguments
+- Allows the customization of the prefix chars.
+- Supports variable numbers of parameters for a single option 
+- Supports subcommands(A main command line parser can use other 
+command line parsers depending on some arguments.)
+
+
+Before getting started, you need to know how a command line interface works,
+so open a terminal on your computer and execute the command ls to get the list of 
+the files contained in the current directory like this:
+
+As you can see, there are a bunch of files in the current directory, but the command 
+didn't return a lot of information about these files.
+
+The good news is that you don't need to look around for another program to 
+have a richer list of the files contained in the current directory. You also don't 
+need to modify hte ls command yourself, because it adopts a command line interface,
+that is just a set of tokens(called arguments) that you can use to configure the behavior 
+of this command.
+
+Now try to execute the command ls again, but with adding the -l option to the command line 
+as in the example below:
+
+ls -l 
+
+The output is very different now. The command has returned a lot of information 
+about the permissions,owner,group,and size of each file and the total directory 
+occupation on the disk.
+
+This is because you used the command line interface of the ls commadn and 
+specified the -l option that enables the long format, a special format that ruents a 
+lot more informaiton for every single file listed.
+
+In order to familiarize yourself with this topic , you're going to read a lot about
+arguments,options,and parameters,so let's clarify the terminology right away:
+
+- An argument is a single part of a command line, delimited by blanks.
+
+- An option is a particular type of argument(or a part of an argument) that can 
+modify the behavior of the command line.
+
+- A parameter is a particular type of argument that provides additional information 
+to a single option or command.
+
+Consider the following command:
+
+ls -l -s -k /var/log
+
+In this example, you have five different arguments:
+
+1. ls:the name of the command you are executing
+2. -l:an option to enable the long list format
+3. -s:an option to print the allocated size of each file 
+4. -k:an option to have the size in kilobytes
+5. /var/log:a parameter that provides additional information (the path to list )
+to the command
+
+Note that, if you have multiple options in a single command line, then you can 
+combine them into a single argument like this:
+
+ls -lsk /var/log 
+
+Here you have only three arguments:
+
+1. ls: the name of command you are executing 
+2. -lsk:the three different options you want to enable (a combination of -l,-s, and -k)
+3. /var/log:a parameter that provides additional information(the path to list) to the command.
+
+
+When ot Use a Command Line Interface 
+
+Now that you know what a command line interace is, you may be wondering when it's a good 
+idea to implement one in your programs. The rule of thumb is that, if you want to provide a user-friendly approach to 
+configuring your program, then you should consider a command line 
+interface, and the standard way to do it is by using the Python argparse library.
+
+Even if you're creating a complex command line program that needs a configuration 
+file to work, if you want to let your user specify which configuration file to use,
+it's a good idea to accept this value by creating a command line interface 
+with the Python argparse library.
+
+How to Use the Python argparse Library to Create a Command Line Interface 
+
+Using Python argparse library has four steps:
+
+1.Import Python argparse library 
+2.Create the parser 
+3.Add optional and positional arguments to the parser 
+4.Execute .parse_args()
+
+After you execute .parse_args(), what you get is a Namespace object
+that contains a simple property for each input argument received from the command 
+line. 
+In order to see these four steps in detail with an example, let's pretend you're 
+creating a program named myls.py that lists the files contained in the current 
+directory. Here's a possible implementation of your command line interface without 
+using the Python argparse library:
+
+
+
+
+
+As you can see , the script does work, but the output is quite different
+from the output you'd expect from a standard built-in command 
+
+Now,let's see how the Python argparse library can improve this code:
+
+The code has changed a lot with the introduction of the Python argparse 
+library. 
+
+The first big difference compared to the previous version is that the if statements 
+to check the arguments provided by the user are gone because the library will check 
+the presence of the arguments for us.
+
+We've imported the Python argparse library, created a simple parser with a brief 
+description of the program's goal, and defined the positional argument 
+we want to get from the user. Lastly, we have executed .parse_args() to parse the input arguments 
+and get a Namespace object that contains the user input.
+
+Now, if you run this code, you'll see that with just four lines of code.
+You have a very different output:
+
+As you can see, the program has detected that you needed at least a positional 
+argument(path), and so the execution of the program has been interrupted with 
+a specific error message.
+
+You may also have noticed that now your program accpets an optional -h flag,like in 
+the example below:
+
+python myls.py -h
+
+Good, now the program responds to the -h flag, displaying a help message that 
+tells the user how to use the program. Isn't that neat, considering that you 
+didn't even need to ask for that feature?
+
+Lastly,with just four lines of code, now the args variable is a Namespace object,
+which has a property for each argument that has been gathered from the command line.
+That's super convenient.
+
+The Advanced Use of the Python argparse Library 
+
+In the previous section, you learned the basic usage of the Python argparse 
+library, and now you can implement a simple command line interfaces for all your programs.
+However, there's a lot more that you can achieve with this library. In this section
+, you'll see almost everything this library can offer you.
+
+Setting the Name of the Program 
+
+By default, the library uses the value of the sys.argv[0] element to set 
+the name of the program, which as you probably already know is the name of the Python 
+script you have executed. However, you can specify the name of your program just by using the 
+prog keyword:
+
+# Create the parser 
+
+my_parser = argparse.ArgumentParser(prog='myls',
+description='List the content of a folder')
+
+With the prog keyword, you specify the name of the program that will be used in the help 
+text:
+
+Displaying Custom Program Usage help
+
+By default, the program usage help has a standard format defined by the 
+Python argparse library. However, you can customize it with the usage keyword like this:
+
+#Create the parser 
+my_parser = argparse.ArgumentParser(prog='myls',
+usage='%(prog)s [options] path',
+description='List the content of a folder')
+
+Note that , at runtime,the %(prog)s token is automatically replaced with 
+the name of your program:
+
+As you can see, the help of the program now shows a different usage string,
+where the [-h] option has been replaced by a generic [options] token .
+
+
+Displaying Text Before and After the Arguments Help 
+
+To customize the text displayed before and after the arguments help text,
+you can use two different keywords:
+
+1. description:for the text that is shown before the help text 
+
+2. epilog: for the text shown after the help text
+
+You've already seen the description keyword in the previous chapter,
+so let's see an example of how the epilog keyword works:
+
+
+Create the parser
+
+my_parser = argpares.ArgumentParser(description='List the content of a folder',
+epilog='Enjoy the program!:)')
+
+The epilog keyword here has customized the text that will be shown 
+after the standard help text:
+
+Now the output shows the extra text that has been customized by the epilog
+keyword.
+
+Customizing the Allowed Prefix Chars 
+
+Another feature that the Python argparse library offers you is the 
+ability to customize the prefix chars, which are the chars that you can 
+use to pass optional arguments to the command line interace.
+
+By default, the standard prefix char is the dash(-) character, but 
+if you want to use a different character, then you can customize it by 
+using the prefix_chars keyword while defining the parser like this:
+
+# Create the parser 
+my_parser = argparse.ArgumentParser(description='List the content of a folder',
+epilog='Enjoy the program! :)',
+prefix_chars='/')
+
+After the redefinition, the program now supports a completely different prefix char,
+and the help text has changed accordingly:
+
+As you can see, now your program does not support the -h flag but the /h flag.
+That's especially useful when you're coding for Microsoft Windows because 
+Windows userse are used to these prefix chars when working with the command line .
+
+
+Setting Prefix Chars for Files That Contain Arguments to Be Included 
+
+When you are dealing with a very long or complicated command line, it can be 
+a good idea to save the arguments to an external file and ask your program to load arguments from 
+it. The Python argparse library can do this work for you out of the box.
+
+
+To test this feature, create the following Python Program .
+
+Allowing or Disallowing Abbreviations 
+
+One of the features that the Python argparse library provides out of the box is the 
+ability to handle abbreviations. Consider the following program, which prints out 
+the value you specify on the command line interface or the --input argument:
+
+
+
+
+This program prints out the value you specify for the --input argument.
+We haven't looked at the optional arguments yet, but don't worry,
+we will discuss them in depth in just a moment. For now, just 
+consider this argument like any other positional argument we already saw,
+with the difference that the name starts with a couple of dashes.
+
+Now let's see how the Python argparse library can handle abbreviations,
+by calling our program multiple times, specifying a different abbreviation of the 
+input argument at each run:
+
+
+As you can see, the optional parameters can always be shortened unless the 
+abbreviation can lead to an incorrect interpretation. But what happens if you 
+try to execute the program specifying just --i 42? In this case , argparse doesn't 
+know if you want to pass the value 42 to the --input argument or the --id argument,
+so it exits the program with a specific error message:
+
+However, if you don't like this behavior , and you want to force your users to 
+specify the full name of the option they use, then you can just disable this feature with the 
+keyword allow_abbrev set to False during the creation of the parser:
+
+
+abbrev_example.py 
+import argparse 
+
+my_parser = argparse.ArgumentParser(allow_abbrev=False)
+my_parser.add_argument('--input', action ='store', type=int,
+required=True)
+
+args = my_parser.parse_args() 
+
+print(args.input)
+
+Now if you try the code above, you'll see that the abbreviations are no 
+longer permitted:
+
+python abbrev_example.py --inp 42 
+
+The error message tells the user that the --input parameter has not been 
+specified because the --inp abbreviation has not been recognized.
+
+Using Auto Help 
+
+In some of the previous examples, you used the -h flag to get a help text.
+ This is a very convenient feature that Python argparse library allows you to 
+ use without having to code anything. However, sometimes you may want to 
+ disable this feature. To do that, just use the add_help keyword when creating 
+ the parser:
+
+ Create the parser 
+ my_parser = argparse.ArgumentParser(description='List the content of a folder'
+ add_help = False)
+
+
+ The code in the example above specifies the add_help keyword set to False, so now if you 
+ run the code, you'll see that the -h flag isn't accepted anymore:
+
+ myls.py 
+
+
+Setting the Name or Flags of the Arguments 
+
+There are basically two different types of arguments that you can add to your 
+command line interface:
+
+1. Positional argument
+2. Optional arguments
+
+Postional arguments are the ones your command needs to operate.
+
+In the previous example, the argument path was a positional argument ,
+and our program couldn't work without it. They are called positional because 
+their position defines their function.
+
+For example, consider the cp command on Linux(or the copy command in Windows) 
+.Here's the standard usage:
+
+cp[OPTION]...[-T] SOURCE DEST 
+
+The first positional argument after the cp command is the source of the file 
+you're going to copy. The second one is the destination where you want to copy it .
+
+Optional arguments are not mandatory, and when they are used they can modify the behavior 
+of the command at runtime. In the cp example, an optional argument is ,
+for example, the -r flag, which makes the command copy directories recursively.
+
+Syntactically, the difference between positional and optional arguments is that 
+optional arguments starts with - or --, while positional arguments don't.
+
+To add an optional argument, you jsut need to call .add_argument() again and name
+the new argument with a starting -.
+
+For example, try to modify the myls.py like this .
+
+
+As you can see, now the program also accepts(but doesn't require ) the -l 
+option, which allows the user to get a long listing format for the directory content.
+
+Setting the Action to Be Taken for an Argument 
+
+When you add an optional argument to your command line interface,
+you can also define what kind of action to take when the argument is specified.
+This means that you usually need to specify how to store the value to the 
+Namespace object you will get when .parse_args() is executed.
+
+There are several actions that are already defined and ready to be used. Let's 
+analyze them in detail:
+
+- store stores the input value to the Namespace object.(This is the default action)
+- store_const stores a constant value when the corresponding optional arguments are specified.
+- store_true stores the Bollean value True when the corresponding optional argument is specified 
+and stores a False elsewhere.
+- store_false stores the Boolean value False when the corresponding optional argument is 
+specified and stores True elsewhere.
+
+- append stores a list, appending a value to the list each time the option is provided.
+
+- append_const stores a list appending a consant value to the list each time the option is provided.
+
+- count stores an int that is equal to the times the option has been provided.
+
+- help shows a help text and exits.
+
+- version shows the version of the program and exits.
+
+Let's create an example to test all the actions we have seen so far:
+
+
+This script accepts an optional argument for each type of action discussed and then 
+prints the value of the arguments read from the command line. Test it by 
+executing this example:
+
+As you can see , if we do not specify any arguments, then the default values are 
+generally None, at least for the actions that do not store a Boolean value.
+
+The use of the store action, instead, stores the value we pass without any further 
+consideration:

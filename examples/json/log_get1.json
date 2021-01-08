@@ -1,0 +1,29 @@
+
+{"message":"log_get",
+"logs":[
+    {
+        "layer": "RLC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "SRB1bis D/C=1 RF=0 P=1 FI=00 E=0 SN=3"
+        ], 
+        "timestamp": 58927562, 
+        "src": "ENB", 
+        "idx": 171, 
+        "ue_id": 1
+    }, 
+    {
+        "layer": "MAC", 
+        "dir": "DL", 
+        "level": 4, 
+        "data": [
+            "LCID:3 len=2 LCID:3 len=14 PAD: len=7 "
+        ], 
+        "timestamp": 58927562, 
+        "src": "ENB", 
+        "idx": 172, 
+        "ue_id": 1
+    }
+]
+}

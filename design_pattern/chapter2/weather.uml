@@ -1,0 +1,6 @@
+class WeatherData{
+    getTemperature()
+    getHumidity()
+    getPressure()
+    measurementsChanged()
+}

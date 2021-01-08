@@ -1,0 +1,5 @@
+import threading
+
+def worker():
+    print ('Hello World'\n) # Add \n so a newline is forced
+    

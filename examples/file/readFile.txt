@@ -1,0 +1,228 @@
+One of the most common tasks that you can do with 
+Python is reading and writing files.
+
+Whether it's writing to a simple text file, reading 
+a complicated server log, or even analyzing raw byte data,
+all of these situations require reading or writing a file.
+
+
+In this tutorial, you'll learn:
+
+- What makes up a file and why that's important in Python 
+- The basics of reading and writing files in Python 
+- Some basic scenarios of reading and writing files 
+
+This tutorial is mainly for beginner to intermediate Pythonistas,
+but there are some tips in here that more advance programmers may appreciate 
+as well.
+
+
+
+What is a File?
+
+Before we can go into how to work with files in Python
+it's important to understand what exactly a file is and how modern operating 
+systems handle some of their aspects.
+
+At its core, a file is a contiguous set of bytes used to store data.
+This data is organized in a specific format and can be anything as simple as a text file 
+or as complicated as a program executable. In the end, these byte files 
+are then translated into binary 1 and 0 for easier processing by the computer.
+
+
+Files on most modern file systems are composed of three main parts:
+
+1. Header:metadata about the contents of the file (file name,
+size, type, and so on)
+
+2. Data: contents of the file as written by the creator or editor 
+
+3. End of file(EOF): special character that indicates the end of the file .
+
+
+what this data represents depends on the format specification used , which is typically
+represented by an extension. For example, a file that has 
+an extension of .git most likely conforms to the Graphics
+Interchange Format specification. There are hundreds,
+if not thousands, of file extensions out there. For this 
+tutorial, you'll only deal with .txt or .csv file extensions.
+
+File Paths.
+
+When you access a file on an operating system, a file path 
+is required. The file path is a string that represents the 
+location of a file. It's broken up into three major parts:
+
+1. Folder Path: the file folder location on the file system where subsequent folders are 
+separated by a forward slash /(Unix) or backslash \(windows)
+
+2. FileName : the actual name of the file  
+
+3. Extension: the end of the file path pre-pended with a period(.)
+used to indicate the file type.
+
+
+Line Endings
+
+One problem often encountered when working with file data is the representation 
+of a new line or line ending. The line ending has its roots from back in hte Morse 
+code era. When a specific pro-sign was used to communicate the end of a 
+transmission or the end of a line.
+
+Later, this was standardized for teleprinters by both the internation Organization
+for standardization(ISO) and the American Standards Association(ASA).
+ASA standard states that line endings should use the sequence of the Carriage Return(
+    CR or \r) and the Line Feed(LF or \n) characters(CR+LF or \r\n)
+). The ISO standard however allowed for either the CR+LF characters or just the LF character.
+
+Character Encodings 
+
+Another common problem that you may face is the encoding of the byte data.
+An encoding is a translation from byte data to human readable characters.
+This is tpically done by assigning a numerical value to represent a character. The two most 
+common encodings are the ASCII and UNICODE Formats. ASCII can only store 128 characters.
+
+ASCII is actually a subset of Unicode(UTF-8),meaning that ASCII and Unicode share the same  
+numerical to character values. It's important to note that parsing a file wiht 
+the incorrect character encoding can lead to failures or misrepresentation of the character.
+For example, if a file was created using the UTF-8 encoding , and you try to parse it using the ASCII encoding,
+if there is  a character that is outside of those 128 values, then an error will be thrown.
+
+Opening and closing a file in Python
+
+
+When you want to work with a file, the first thing to do is to oepn it..
+
+it's important to remember that it's your responsibility to close the file.
+In most cases, upon termination of an application or script, a file will be closed 
+eventually. However, there is no guarantee when exactly that will happen.
+This can lead to unwanted behavior including resource leaks. It's also best practice within 
+Python (Pythonic) to make sure that your code behaves in a way that is well defined and reduces
+any unwanted behavior.
+
+
+When you're manipulating a file, there are two ways that you can use to 
+ensure that a file is closed properly, even when encountering an error. The first 
+way to close a file is to use the try-finally block .
+
+The second way to close a file is to use the with statement:
+
+with open('dog_breeds.txt') as reader:
+    #further file processing goes here.
+
+
+The with statement automatically takes care of closing the file once it leaves
+the with block, even in cases of error. I highly recommend that you use the 
+with statement as much as possible, as it allows for cleaner code and makes handling 
+any unexpected errors easier for you.
+
+Most likely, you'll also want to use the second positional argument,mode.
+This argument is a string that contains multiple characters to represent how you 
+want to open the file. The default and most common is 'r', which represents opening 
+the file in read-only mode as a text file:
+
+with open('dog_breeds.txt','r') as reader:
+    #Further file processing goes here .
+
+Other options for modes are fully documented online, but the most commonly used 
+ones are the following:
+
+
+character   Meaning 
+'r'         Open for reading(default)
+'w'         Open for writing,truncating(overwriting) the file first 
+'rb' or 'wb' Open in binary mode (read/write using byte data)
+
+
+Let's go back and talk a little about file objects. A file object is :
+
+an object exposing a file-oriented API (with methods such as read () or write )
+to an underlying resource.
+
+There are three different categories of file objects:
+
+- Text files 
+- Buffered binary files 
+- Raw binary files .
+
+Text File Types
+
+A text file is the most common file that you'll encounter. Here are some 
+examples of how these files are opened:
+
+open('abc.txt')
+open('abc.txt','r')
+open('abc.txt','w')
+
+With these types of files , open() will return a TextIOWrapper file object:
+
+file = open('dog_breeds.txt')
+type(file)
+<class '_io.TextIOWrapper'>
+
+This is the default file object returned by open().
+
+Buffered Binary File Types
+
+A buffered bianry file type is used for reading and writing binary files. Here are 
+some examples of how these files are opened:
+open('abc.txt','rb')
+
+open('abc.txt','wb')
+
+With these types of files, open() will return either a BufferedReader 
+or BufferedWriter file object:
+
+file = open('dob_breeds.txt','rb')
+type(file)
+<class '_io.BufferedReader'>
+
+Raw file Types
+A raw file type is 
+
+generally used as a low-level building-block for binary and text streams."
+
+It is therefore not typically used.
+
+Here's an example of how these files are opened:
+
+open('abc.txt','rb',buffering=0)
+
+With these types of files,open() will return a FileIO file object:
+
+file= open('dog_breeds.txt','rb',buffering=0)
+
+>>type(file)
+<class '_io.FileIO'>
+
+
+
+Reading and Writing Opened Files 
+
+Once you've opened up a file, you'll want to read or write to the file.
+First off, let's covering reading a file. There are multiple methods
+that can be called on a file object to help you out:
+
+Method               what it does  
+.read(size= -1)     This reads from the file based on the number of size bytes.
+                    If no argument is passed or None or -1 is passed,
+                    then the entire file is read.
+
+.readline(size=-1)  This reads at most size number of characters from the 
+                    line. This continues to the end of the line and then wraps 
+                    back around. If no argument is passed or None or -1 is backaround.
+                    If no argument is passed or None or -1 is passed, then the entire line is read .
+
+.readlines()        This reads the remaining lines from the file object and returns them as a list.
+
+
+Using the same dog_breeds.txt file you used above, let's go through some examples 
+of how to use these methods. Here's an example of how to open and read the entire file 
+using .read():
+
+Python 
+with open('dog_breeds.txt','r') as reader:
+    print(reader.read())
+
+
+

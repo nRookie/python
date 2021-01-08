@@ -1,0 +1,72 @@
+    @startuml data parse loop and read_write loop
+
+    actor robot as r
+
+    participant NB_ATKeywords as na
+
+
+    entity response_queue as rspq
+
+    entity rxBuffer as rxb
+    entity rspBuffer as rspb
+    entity eventBuffer as eb
+
+    participant low_level_nb_at as llna
+
+    participant low_level_uart_at as llua  
+
+    entity rx_queue as rxq
+    entity tx_queue as txq
+
+    participant module as m
+
+
+    loop when uart port is opened 
+        alt uart_write is set
+            txq -> m: send data
+            llua -> llua: unset uart_write
+        else uart_write is not set and there is data from module 
+            m -> rxq: recv data 
+        end
+    end 
+
+    loop when uart port is opened
+        llna -> llua: ll_uart_read
+        llna -> rxq: get data from rx_queue 
+        rxq -> llna: return data
+
+        alt wait_response_counter > 0
+
+            loop length of data > 0
+                llna -> rspb: put one bytes of data into rspBuffer and len of data - 1.
+                rspb -> llna: decode the data from rspBuffer into recv
+            
+                alt  recv ends with expected_endswith_str
+                    llna -> rspq: put the recv into response_queue
+                    llna -> llna: wait rsp_counter decrase
+                    alt length of data != 0
+                        llna -> eb: put the remaining data into event_buffer.
+                    end
+                    llna -> rspb: clear the content in the rspBuffer
+                    llna -> llna: clear the expected_endswith_str
+                else parse recv according to RESPONSE_REGEXP
+
+                    alt recv match the RESPONSE_REGEXP 
+                        llna -> rspq: put the recv into response_queue.
+                        llna -> llna: wait rsp_counter decrase
+
+                        alt length of data != 0
+                        llna -> eb: put the remaining data into event_buffer.
+                        end
+
+                        llna -> rspb: clear the content in the rspBuffer
+                    end 
+
+                end 
+            end
+        
+        else wait_response_counter == 0
+            llna -> eb: put data into the event_Buffer
+        end
+    end
+@enduml

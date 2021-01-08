@@ -1,0 +1,45 @@
+    @startuml nb at wait event 
+
+    actor robot as r
+
+    participant NB_ATKeywords as na
+
+    entity eventStr as es 
+    entity eventList as el
+
+    participant low_level_nb_at as llna
+
+    entity eventBuffer as eb
+
+    r -> na: NB AT WAIT EVENT
+    activate na
+        na -> llna: uart_wait_event
+        activate llna
+            llna -> llna: _parse_event_string()
+            activate llna
+                eb -> llna: get data from event Buffer
+                llna -> es: decode data and put into eventStr
+                llna -> es: search the event match the event regular expression
+                es -> llna : return all list which match the event regular expression
+                alt private event list is not empty
+                    llna -> el: put all list into event list
+                end
+                loop  for event in the event list 
+                    llna -> eb: clear the content in the event Buffer which match the event.
+                end
+                deactivate llna
+
+            loop  for event in the event list 
+                alt find the keywords in the event
+                    alt multi_event is not set 
+                        llna -> el: remove the event from the event list 
+                        llna -> na: return an event 
+                    else multi_event is set 
+                        llna -> na: return all the event list
+                    end
+                end
+            end
+            deactivate llna
+        deactivate na
+
+    @enduml
