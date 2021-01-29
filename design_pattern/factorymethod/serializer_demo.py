@@ -118,28 +118,135 @@ it instead of having the implementation in the body of the if statemetn:
 
 
 
+# class SongSerializer:
+#     def serialize(self, song, format):
+#         if format == 'JSON':
+#             return self._serialize_to_json(song)
+#         elif format == 'XML':
+#             return self._serialize_to_xml(song)
+#         else:
+#             raise ValueError(format)
+        
+#     def _serialize_to_json(self, song):
+#         payload = {
+#             'id' : song.song_id,
+#             'title' : song.title,
+#             'artist' : song.artist
+#         }
+#         return json.dumps(payload)
+
+#     def _serialize_to_xml(self, song):
+#         song_element = et.Element('song', attrib={'id': song.song_id})
+#         title = et.SubElement(song_element, 'title')
+#         title.text = song.title
+#         artist = et.SubElement(song_element, 'artist')
+#         artist.text = song.artist
+#         return et.tostring(song_element, encoding='unicode')
+
+
+""" basic implementation of factory method
+
+The central idea in Factory method is to provide a separate component
+with the responsibility to decide which concrete implementation should be used based on some
+specified parameter. That parameter in our example is the format.
+
+To complete the implementation of Factory method. you add a new method ._get_serializer()
+that takes the desired format. This method evaluates the value of format and returns the 
+matching serialization function:
+
+
+"""
+
+
+# class SongSerializer:
+#     def _get_serializer(self, format):
+#         if format == 'JSON':
+#             return self._serialize_to_json
+#         elif format == 'XML':
+#             return self._serialize_to_xml
+#         else:
+#             raise ValueError(format)
+
+#     def serialize(self, song, format):
+#         serializer = self._get_serializer(format)
+#         return serializer(song)
+        
+#     def _serialize_to_json(self, song):
+#         payload = {
+#             'id' : song.song_id,
+#             'title' : song.title,
+#             'artist' : song.artist
+#         }
+#         return json.dumps(payload)
+
+#     def _serialize_to_xml(self, song):
+#         song_element = et.Element('song', attrib={'id': song.song_id})
+#         title = et.SubElement(song_element, 'title')
+#         title.text = song.title
+#         artist = et.SubElement(song_element, 'artist')
+#         artist.text = song.artist
+#         return et.tostring(song_element, encoding='unicode')
+    
+
+
+""" The final implementation shows the different component of Factory method.
+The .serialize() method is the application code that depends on an interface to complete its task.
+
+This is referred to as the client component of the pattern. The interface defined is referred to as 
+the product component. In our case, the product is a function that takes a Song and returns 
+a string representation..
+
+The._serialize_to_json() and._serialize_to_xml() methods are concrete implementations of the product.
+Finally, the ._get_serializer() method is the creator component. The creator decides which conrete 
+implementation to use.
+
+
+Because you started with some existing code, all the components of Factory method are members of the same class
+SongSerializer.
+
+Usually, this is not the case and, as you can see. none of the added mehtods use the self
+parameter. This is good indication that they should not be method of SongSerializer class, and they can 
+become external functions:
+
+"""
 class SongSerializer:
     def serialize(self, song, format):
-        if format == 'JSON':
-            return self._serialize_to_json(song)
-        elif format == 'XML':
-            return self._serialize_to_xml(song)
-        else:
-            raise ValueError(format)
-        
-    def _serialize_to_json(self, song):
-        payload = {
-            'id' : song.song_id,
-            'title' : song.title,
-            'artist' : song.artist
-        }
-        return json.dumps(payload)
+        serializer = _get_serializer(format)
+        return serializer(song)
 
-    def _serialize_to_xml(self, song):
-        song_element = et.Element('song', attrib={'id': song.song_id})
-        title = et.SubElement(song_element, 'title')
-        title.text = song.title
-        artist = et.SubElement(song_element, 'artist')
-        artist.text = song.artist
-        return et.tostring(song_element, encoding='unicode')
+def _get_serializer(format):
+    if format == 'JSON':
+        return _serialize_to_json
+    elif format == 'XML':
+        return _serialize_to_xml
+    else:
+        raise ValueError(format)
+    
+def _serialize_to_json(song):
+    payload = {
+        'id' : song.song_id,
+        'title' : song.title,
+        'artist' : song.artist
+    }
+    return json.dumps(payload)
 
+def _serialize_to_xml(song):
+    song_element = et.Element('song', attrib={'id': song.song_id})
+    title = et.SubElement(song_element, 'title')
+    title.text = song.title
+    artist = et.SubElement(song_element, 'artist')
+    artist.text = song.artist
+    return et.tostring(song_element, encoding='unicode')
+
+
+""" The mechanics of Factory Method are always the same. A client
+(SongSerializer.serialize()) depends on a concrete implementation of an interface.
+It requests the implementation from a creator component (get_serializer()) using some sort
+of identifier(format).
+
+The creator returns concrete implementation according to the value of the parameter to the client,
+and the client uses the provided object to complete its task.
+
+You can execute the same set of instructions in the Python interactive interpreter to verify that the application
+behavior has not changed.
+"""
