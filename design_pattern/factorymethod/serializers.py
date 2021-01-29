@@ -179,6 +179,11 @@ factory = SerializerFactory()
 factory.register_format('JSON', JsonSerializer)
 factory.register_format('XML', XmlSerializer)
 
+class ObjectSerializer:
+    def serialize(self, serializable, format):
+        serializer = factory.get_serializer(format)
+        serializable.serialize(serializer)
+        return serializer.to_str()
 
 
 """ The .register_format(format, creator) method allows registering new formats
