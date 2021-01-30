@@ -98,3 +98,22 @@ of the .__call__() methods implemented in the builder classes.
 
 
 
+import object_factory
+
+
+factory = object_factory.ObjectFactory()
+
+factory.register_builder('SPOTIFY', SpotifyServiceBuilder())
+factory.register_builder('PANDORA', PandoraServiceBuilder())
+factory.register_builder('LOCAL', create_local_music_service)
+
+
+class MusicServiceProvider(object_factory.ObjectFactory):
+    def get(self, service_id, **kwargs):
+        return self.create(service_id, **kwargs)
+
+
+services = MusicServiceProvider()
+services.register_builder('SPOTIFY', SpotifyServiceBuilder())
+services.register_builder('PANDORA', PandoraServiceBuilder())
+services.register_builder('LOCAL', create_local_music_service)
