@@ -2,7 +2,7 @@ import plugins
 
 print(__package__)
 greetings = plugins.names_factory(__package__)
-
+print(greetings)
 """ 
 The major proposed change is the introduction of a new module level attribute,
 __package__. When it is present, relative imports will be based on this attribute rather than the module 

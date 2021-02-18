@@ -120,7 +120,7 @@ Here’s how the scope values look in action:
 
 
 
-### Scope is defined with the fixure.
+### Scope is defined with the fixture.
 
 ### Fixture can only depend on other fixtures of their same scope or wider. So a function scope fixture can depend on other function scope fixtures.
 
