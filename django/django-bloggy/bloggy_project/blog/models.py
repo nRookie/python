@@ -9,7 +9,7 @@ class Post(models.Model):
     tag = models.CharField(max_length=20, blank=True, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
     views = models.IntegerField(default=0)
-    slug = models.CharField(max_length=100)
+    slug = models.CharField(max_length=100, unique=True)
     '''
     Note: By setting blank=True, we are indicating that the field is not required and can be left blank within the form
     (or whenever data is inputted by the user). Meanwhile , null=True allows blank values to be stored in the database as NULL.

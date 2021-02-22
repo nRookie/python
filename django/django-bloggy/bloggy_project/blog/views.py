@@ -25,8 +25,8 @@ def index(request):
     # c = {'latest_posts': latest_posts, }
     return HttpResponse(t.render(context_dict))
 
-def post(request, post_url):
-    single_post = get_object_or_404(Post, title=post_url.replace('_', ' '))
+def post(request, slug):
+    single_post = get_object_or_404(Post, slug=slug)
     single_post.views += 1  # increment the number of views
     single_post.save()  # and save it
     t = loader.get_template('blog/post.html')
