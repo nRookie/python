@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blongo',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'blongo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,11 +81,11 @@ WSGI_APPLICATION = 'blongo_project.wsgi.application'
 #     }
 # }
 
-AUTHENTICATION_BACKENDS = (
-'mongoengine.django.auth.MongoEngineBackend',
-)
+# AUTHENTICATION_BACKENDS = (
+# 'mongoengine.django.auth.MongoEngineBackend',
+# )
 
-SESSION_ENGINE = 'mongoengine.django.sessions'
+# SESSION_ENGINE = 'mongoengine.django.sessions'
 
 MONGO_DATABASE_NAME = 'blongo'
 
