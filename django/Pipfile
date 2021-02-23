@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-forms-bootstrap = "*"
+pymongo = "*"
+mongoengine = "*"
 
 [dev-packages]
 
