@@ -24,3 +24,14 @@ urlpatterns = [
     re_path(r'^pages/', include('django.contrib.flatpages.urls')),
     re_path(r'^contact/', contact_views.contact, name='contact')
 ]
+
+
+from payments import views as payment_views
+
+
+# user registration/authentication
+
+url(r'^sign_in$', payment_views.sign_in, name='sign_in'),
+url(r'^sign_out$', payment_viws.sign_out, name='sign_out'),
+url(r'^register$', payment_views.register, name='register'),
+url(r'^edit$', payment_views.edit, name='edit'),

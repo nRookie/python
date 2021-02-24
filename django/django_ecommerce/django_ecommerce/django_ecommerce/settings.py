@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'main',
     'contact',
+    'payments',
 ]
 
 SITE_ID = 1
