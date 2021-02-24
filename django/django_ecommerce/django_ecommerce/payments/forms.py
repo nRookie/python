@@ -24,7 +24,7 @@ class CardForm(PaymentForm):
 
 class UserForm(CardForm):
     name = forms.CharField(required=True)
-    email = forms.EmailFiled(required=True)
+    email = forms.EmailField(required=True)
     password = forms.CharField(
         required=True,
         label=(u' Password'),

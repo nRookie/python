@@ -17,21 +17,23 @@ from django.contrib import admin
 from main import views as main_views
 from django.urls import path, re_path, include
 from contact import views as contact_views
+from payments import views as payment_views
+
+
+# user registration/authentication
 admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', main_views.index, name='home'),
     re_path(r'^pages/', include('django.contrib.flatpages.urls')),
-    re_path(r'^contact/', contact_views.contact, name='contact')
+    re_path(r'^contact/', contact_views.contact, name='contact'),
+    re_path(r'^sign_in$', payment_views.sign_in, name='sign_in'),
+    re_path(r'^sign_out$', payment_views.sign_out, name='sign_out'),
+    re_path(r'^register$', payment_views.register, name='register'),
+    re_path(r'^edit$', payment_views.edit, name='edit'),
 ]
 
 
-from payments import views as payment_views
 
 
-# user registration/authentication
-
-url(r'^sign_in$', payment_views.sign_in, name='sign_in'),
-url(r'^sign_out$', payment_viws.sign_out, name='sign_out'),
-url(r'^register$', payment_views.register, name='register'),
-url(r'^edit$', payment_views.edit, name='edit'),
+ 

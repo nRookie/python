@@ -8,6 +8,7 @@ django = "*"
 django-forms-bootstrap = "*"
 pymongo = "*"
 mongoengine = "*"
+stripe = "*"
 
 [dev-packages]
 
