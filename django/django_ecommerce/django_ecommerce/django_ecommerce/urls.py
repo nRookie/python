@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from main import views as main_views
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 
 admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', main_views.index, name='home'),
+    re_path(r'^pages/', include('django.contrib.flatpages.urls')),
 ]
