@@ -3,6 +3,8 @@ from django.urls import resolve
 from .views import index
 from django.template.loader import render_to_string
 from django.test import RequestFactory
+import mock
+from payments.models import User
 
 class MainPageTests(TestCase):
     
@@ -39,7 +41,8 @@ class MainPageTests(TestCase):
     #         index.content.decode().replace(' ', ''),
     #         render_to_string('index.html').replace(' ', '')
     #     )
-    
+
+
     def test_index_handles_logged_in_user(self):
         # create the user needed for user lookup from index page
         from payments.models import User
@@ -47,20 +50,23 @@ class MainPageTests(TestCase):
             name='jj',
             email='j@j.com'
         )
-        user.save()
+
+        # create a session that appears to have a logged in user
+        self.request.session = {"user": "1"}
         
-        # create a Mock request object
-        request_factory = RequestFactory()
-        request = request_factory.get('/')
-        request.session = {"user": "1"} # make sure it has an associated session
-        
-        #request the index page
-        resp = index(request)
-        
-        # verify it returns the page for the logged in user.
-        
-        self.assertEquals (
-            resp.content.decode().replace(' ', ''),
-            render_to_string('user.html', {'user': user}).replace(' ', '')
-        )
-        # self.assertTemplateUsed(resp, 'user.html')
+        with mock.patch('main.views.User') as user_mock:
+            #Tell the mock what to do when called.
+            config = {'get.return_value' : user}
+            user_mock.objects.configure_mock(**config)
+            
+            # Run the test
+            resp = index(self.request)
+
+            # Ensure that we return the state of the session back to normal
+
+            self.request.session = {}
+
+            expectedHtml = render_to_string(
+                'user.html', {'user': user}).replace(' ', '')
+
+            self.assertEquals(resp.content.decode().replace(' ', ''), expectedHtml)

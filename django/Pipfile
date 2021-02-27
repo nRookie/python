@@ -9,6 +9,7 @@ django-forms-bootstrap = "*"
 pymongo = "*"
 mongoengine = "*"
 stripe = "*"
+mock = "*"
 
 [dev-packages]
 
