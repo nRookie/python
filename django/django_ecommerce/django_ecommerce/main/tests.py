@@ -6,6 +6,20 @@ from django.test import RequestFactory
 
 class MainPageTests(TestCase):
     
+    
+    # setup
+    
+    @classmethod
+    def setUpClass(cls):
+        super(MainPageTests, cls).setUpClass() 
+        request_factory = RequestFactory()
+        cls.request = request_factory.get('/')
+        cls.request.session = {}
+
+    #######################
+    #### Testing routes ###
+    #######################
+
     def test_root_resolves_to_main_view(self):
         main_page = resolve('/')
         self.assertEqual(main_page.func, index)
@@ -22,8 +36,8 @@ class MainPageTests(TestCase):
     # def test_returns_exact_html(self):
     #     index = self.client.get("/")
     #     self.assertEquals(
-    #         index.content,
-    #         render_to_string('index.html')
+    #         index.content.decode().replace(' ', ''),
+    #         render_to_string('index.html').replace(' ', '')
     #     )
     
     def test_index_handles_logged_in_user(self):
