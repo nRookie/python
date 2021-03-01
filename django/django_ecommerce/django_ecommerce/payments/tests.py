@@ -1,5 +1,6 @@
 from django.test import TestCase
 from payments.models import User
+from django.test import SimpleTestCase
 
 # Create your tests here.
 
@@ -39,6 +40,8 @@ class FormTesterMixin():
 
 from payments.forms import SigninForm
 import unittest
+from payments.forms import UserForm
+from django import forms
 
 
 class FormTests(unittest.TestCase, FormTesterMixin):
@@ -56,3 +59,38 @@ class FormTests(unittest.TestCase, FormTesterMixin):
                                  invalid_data['error'][0],
                                  invalid_data['error'][1],
                                  invalid_data["data"])
+
+    def test_user_form_passwords_match(self):
+        form = UserForm(
+            {
+                'name': 'jj',
+                'email': 'j@j.com',
+                'password': '1234',
+                'ver_password': '1234',
+                'last_4_digits': '3333',
+                'stripe_token': '1'}
+        )
+        
+        # Is the data valid ? -- if not print out the errors
+        self.assertTrue(form.is_valid(), form.errors)
+        
+        # this will throw an error if the form doesn't clean correctly
+        self.assertIsNotNone(form.clean())
+
+    def test_user_form_passwords_dont_match_throws_error(self):
+        form = UserForm(
+            {
+                'name': 'jj',
+                'email': 'j@j.com',
+                'password': '234',
+                'ver_password': '1234', # bad password
+                'last_4_digits' : '3333',
+                'stripe_token': '1'
+            }
+        )
+        
+        # Is the data valid ?
+        self.assertFalse(form.is_valid())
+
+        # self.assertRaisesMessage(forms.ValidationError, "Passwords do not match",
+        #                          form.clean)
