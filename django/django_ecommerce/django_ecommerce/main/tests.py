@@ -68,5 +68,5 @@ class MainPageTests(TestCase):
 
             expectedHtml = render_to_string(
                 'user.html', {'user': user}).replace(' ', '')
-
+            self.maxDiff = None
             self.assertEquals(resp.content.decode().replace(' ', ''), expectedHtml)
