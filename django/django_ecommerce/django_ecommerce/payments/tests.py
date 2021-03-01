@@ -100,6 +100,7 @@ from .views import sign_in, sign_out
 
 from django.urls import resolve
 from django.template.loader import render_to_string
+from django.shortcuts import render
 from django.test import RequestFactory
 class ViewTesterMixin(object):
 
@@ -125,19 +126,20 @@ class ViewTesterMixin(object):
 
     def test_returns_correct_html(self):
         resp = self.view_func(self.request)
-        self.assertEquals(resp.content.decode().replace(' ', ''), self.expected_html.replace(' ', ''))
+        self.assertEquals(resp.content, self.expected_html.content)
 
 class SignInPageTests(TestCase, ViewTesterMixin):
     @classmethod
     def setUpClass(cls):
         super(SignInPageTests, cls).setUpClass() 
-        html = render_to_string(
+        html = render(
+            None,
             'sign_in.html', {
                 'form': SigninForm(),
-                'user':None
+                'user': None
             }
         )
-        
+
         ViewTesterMixin.setupViewTester(
             '/sign_in',
             sign_in,
