@@ -94,3 +94,54 @@ class FormTests(unittest.TestCase, FormTesterMixin):
 
         # self.assertRaisesMessage(forms.ValidationError, "Passwords do not match",
         #                          form.clean)
+
+
+from .views import sign_in, sign_out
+
+from django.urls import resolve
+from django.template.loader import render_to_string
+from django.test import RequestFactory
+class ViewTesterMixin(object):
+
+    @classmethod
+    def setupViewTester(cls, url, view_func, expected_html,
+                        status_code=200,
+                        session={}):
+        request_factory = RequestFactory()
+        cls.request = request_factory.get(url)
+        cls.request.session = session
+        cls.status_code = status_code
+        cls.url = url
+        cls.view_func = staticmethod(view_func)
+        cls.expected_html = expected_html
+
+    def test_resolves_to_correct_view(self):
+        test_view = resolve(self.url)
+        self.assertEquals(test_view.func, self.view_func)
+
+    def test_returns_appropriate_response_code(self):
+        resp = self.view_func(self.request)
+        self.assertEquals(resp.status_code, self.status_code)
+
+    def test_returns_correct_html(self):
+        resp = self.view_func(self.request)
+        self.assertEquals(resp.content.decode().replace(' ', ''), self.expected_html.replace(' ', ''))
+
+class SignInPageTests(TestCase, ViewTesterMixin):
+    @classmethod
+    def setUpClass(cls):
+        super(SignInPageTests, cls).setUpClass() 
+        html = render_to_string(
+            'sign_in.html', {
+                'form': SigninForm(),
+                'user':None
+            }
+        )
+        
+        ViewTesterMixin.setupViewTester(
+            '/sign_in',
+            sign_in,
+            html
+        )
+
+
