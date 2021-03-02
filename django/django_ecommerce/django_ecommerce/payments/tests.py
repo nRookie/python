@@ -147,3 +147,20 @@ class SignInPageTests(TestCase, ViewTesterMixin):
         )
 
 
+
+class SignOutPageTests(TestCase, ViewTesterMixin):
+    
+    @classmethod
+    def setUpClass(cls):
+        super(SignOutPageTests, cls).setUpClass()
+        ViewTesterMixin.setupViewTester(
+            '/sign_out',
+            sign_out,
+            "", # a redirect will return no html
+            status_code=302,
+            session={"user": "dummy"},
+        )
+
+    def setUp(self):
+        #sign_out clears the session, so let's reset it overtime
+        self.request.session = {"user": "dummy"}
