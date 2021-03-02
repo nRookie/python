@@ -2,6 +2,19 @@ from django.test import TestCase
 from payments.models import User
 from django.test import SimpleTestCase
 
+
+import django_ecommerce.settings as settings
+from payments.forms import SigninForm, UserForm
+from payments.views import soon, register, sign_in, sign_out
+from django.shortcuts import render
+from django.urls import resolve
+
+
+from payments.forms import SigninForm
+import unittest
+from payments.forms import UserForm
+from django import forms
+from django.test import RequestFactory
 # Create your tests here.
 
 
@@ -37,12 +50,6 @@ class FormTesterMixin():
                 expected_error_msg, pformat(data)
             )
         )
-
-from payments.forms import SigninForm
-import unittest
-from payments.forms import UserForm
-from django import forms
-
 
 class FormTests(unittest.TestCase, FormTesterMixin):
 
@@ -96,12 +103,6 @@ class FormTests(unittest.TestCase, FormTesterMixin):
         #                          form.clean)
 
 
-from .views import sign_in, sign_out
-
-from django.urls import resolve
-from django.template.loader import render_to_string
-from django.shortcuts import render
-from django.test import RequestFactory
 class ViewTesterMixin(object):
 
     @classmethod
@@ -126,7 +127,7 @@ class ViewTesterMixin(object):
 
     def test_returns_correct_html(self):
         resp = self.view_func(self.request)
-        self.assertEquals(resp.content.decode(), self.expected_html)
+        self.assertEquals(resp.content.decode().replace(' ',''), self.expected_html.replace(' ',''))
 
 class SignInPageTests(TestCase, ViewTesterMixin):
     @classmethod
@@ -143,7 +144,7 @@ class SignInPageTests(TestCase, ViewTesterMixin):
         ViewTesterMixin.setupViewTester(
             '/sign_in',
             sign_in,
-            html.content
+            html.content.decode()
         )
 
 
@@ -164,3 +165,31 @@ class SignOutPageTests(TestCase, ViewTesterMixin):
     def setUp(self):
         #sign_out clears the session, so let's reset it overtime
         self.request.session = {"user": "dummy"}
+
+
+class RegisterPageTests(TestCase, ViewTesterMixin):
+    @classmethod
+    def setUpClass(cls):
+        super(RegisterPageTests, cls).setUpClass() 
+        html = render(
+            None,
+            'register.html',
+            {
+                'form': UserForm(),
+                'months': range(1, 12),
+                'publishable': settings.STRIPE_PUBLISHABLE,
+                'soon': soon(),
+                'user': None,
+                'years': range(2011, 2036)
+            }
+        )
+
+        ViewTesterMixin.setupViewTester(
+            '/register',
+            register,
+            html.content.decode()
+        )
+
+    def setUp(self):
+        request_factory = RequestFactory()
+        self.request = request_factory.get(self.url)
