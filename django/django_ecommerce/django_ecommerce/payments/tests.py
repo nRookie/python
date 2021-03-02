@@ -126,7 +126,7 @@ class ViewTesterMixin(object):
 
     def test_returns_correct_html(self):
         resp = self.view_func(self.request)
-        self.assertEquals(resp.content, self.expected_html.content)
+        self.assertEquals(resp.content.decode(), self.expected_html)
 
 class SignInPageTests(TestCase, ViewTesterMixin):
     @classmethod
@@ -143,7 +143,7 @@ class SignInPageTests(TestCase, ViewTesterMixin):
         ViewTesterMixin.setupViewTester(
             '/sign_in',
             sign_in,
-            html
+            html.content
         )
 
 
